@@ -97,59 +97,18 @@
 <ol>
 <li>sequencing</li>
 <li>imputation</li>
+<li>QC（call rate, MAF）</li>
+<li>（样本聚类 欧氏距离</li>
 </ol>
-<p>phenotype preparation</p>
-<ol>
-<li>BLU</li>
-</ol>
-<p>basic statistics</p>
-<ol>
-<li>distrubution<br>zscore(normalization standardization)</li>
-<li>corelate(pearson,spearman,kendall,<br>fisher,chip-squared test)</li>
-<li>bayasi</li>
-<li>how to calculate ‘r2’?</li>
-<li>bonferroni</li>
-</ol>
-<p>GWAS</p>
-<ol>
-<li>kinship(欧氏距离）</li>
-<li>ANO<br>How to deal with population strucure?</li>
-<li>what are ‘lambda’，’P’,’PVE’,’effect size’?</li>
-<li>conditional analysis</li>
-<li>how to pick ‘p threshold’?<br>(how to calculate independent snp?)</li>
-</ol>
-<p>TWAS</p>
-<ol>
-<li>genomic prediction(G matrix)<br>prediction acuracy(cross validation)</li>
-<li></li>
-</ol>
-<p>intergrate</p>
-<ol>
-<li>colocalization</li>
-<li>MR</li>
-</ol>
-<p>ATAC-seq</p>
-<ol>
-<li>chrom accessibility region(where, function)</li>
-<li>sequencing</li>
-<li>flow and note</li>
-</ol>
-<p>bisfule-seq</p>
-<ol>
-<li>sequencing</li>
-<li>flow and note</li>
-<li>DMR</li>
-</ol>
-<p>RNA-seq<br><a target="_blank" rel="noopener" href="https://ming-lian.github.io/2019/02/08/Stat-on-RNAseq/">https://ming-lian.github.io/2019/02/08/Stat-on-RNAseq/</a><br>1.sequencing(depth,coverage,library)<a target="_blank" rel="noopener" href="https://www.jieandze1314.com/post/cnposts/239/">https://www.jieandze1314.com/post/cnposts/239/</a><br>  批次效应 batch<br>2.how to aligh<br>3.flow and note</p>
-<p>find DEG<br>1.deseq principles<br>  qc<br>  最小二乘法</p>
-<p>WGCNA<br>1.soft threshold</p>
-<p>SNP,SV</p>
-<p>Interpreting literature：<br>Using Interactome Big Data to Crack Genetic Mysteries and Enhance Future Crop Breeding - ScienceDirect</p>
-
+        
+          <p class="article-more-link">
+            <a href="/2022/11/17/leilei-blog/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/17/leilei-blog/" data-id="clakws8v60001tqw8097efgm0" data-title="structure" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/11/17/leilei-blog/" data-id="clamloohe0004fbw8fmtmfooo" data-title="structure" class="article-share-link">Share</a>
       
       
       
@@ -161,10 +120,10 @@
 
 
   
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-g-sequencing" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/11/17/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2022-11-17T06:22:46.559Z" itemprop="datePublished">2022-11-17</time>
+    <a href="/2022/11/17/g-sequencing/" class="article-date">
+  <time class="dt-published" datetime="2022-11-17T12:56:52.000Z" itemprop="datePublished">2022-11-17</time>
 </a>
     
   </div>
@@ -175,7 +134,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/11/17/hello-world/">Hello World</a>
+      <a class="p-name article-title" href="/2022/11/17/g-sequencing/">sequencing</a>
     </h1>
   
 
@@ -183,24 +142,235 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <p>sanger</p>
+<p>NGS</p>
+<p>array</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/17/hello-world/" data-id="clakws8v30000tqw834s2970q" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/11/17/g-sequencing/" data-id="clamloohc0001fbw819kz3cvd" data-title="sequencing" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-blup" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/17/blup/" class="article-date">
+  <time class="dt-published" datetime="2022-11-17T13:04:36.000Z" itemprop="datePublished">2022-11-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/17/blup/">BLUP</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Which one should we choose to act as phenotype？</p>
+<ol>
+<li>BLUP（best linear unbiased prediction）随机因子</li>
+<li>BLUE（best linear unbiased evaluation）固定因子</li>
+<li>Means</li>
+</ol>
+<p>BLUP formula：</p>
+<p>亲缘系数（coefficient of kinship）：从两个个体中分别随机抽取一个同源等位基因，这两个基因是IBD的概率（相同且来自同一个祖先）。直接衡量个体间亲缘关系。</p>
+<p>近交系数（inbreeding coefficient, F）：一个个体某个基因座上的两个等位基因为血缘同源（IBD）的概率。衡量父母间亲缘关系。也称固定系数fixation index。</p>
+<p>血缘系数（coefficient of relationship,r ）:有共同祖先的两个个体基因型一致的概率。&#x3D;2 fold coefficient of kinship</p>
+<p><a target="_blank" rel="noopener" href="https://gwaslab.com/2021/05/22/coefficient-of-kinship-inbreeding-relationship/">https://gwaslab.com/2021/05/22/coefficient-of-kinship-inbreeding-relationship/</a></p>
+<p>Advantages of BLUP：</p>
+<ol>
+<li>利用所有亲属信息</li>
+<li>校正环境效应</li>
+<li>校正非随机交配造成的偏差</li>
+<li>考虑群体间和世代间的遗传差异</li>
+<li>提供个体育种值的无偏估计</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zjguilai/article/details/90605300">https://blog.csdn.net/zjguilai/article/details/90605300</a></p>
+<p>heritability</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/17/blup/" data-id="clamlooh90000fbw813df9nyh" data-title="BLUP" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-gwas" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/17/gwas/" class="article-date">
+  <time class="dt-published" datetime="2022-11-17T13:20:11.000Z" itemprop="datePublished">2022-11-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/17/gwas/">gwas</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>亲缘关系矩阵（kinship）可以用于群体结构的可视化和关联分析中矫正群体结构混淆造成的高假阳性。我们通过计算个体i和个体j之间的亲缘关系系数来估计亲缘关系矩阵，这种方法是Amin 、Astle 和Balding Amin 所提出的(Amin et al., 2007 , Astle and Balding, 2009)：</p>
+<p><img src="/source/pic/1668757354130.jpg" alt="xxx"></p>
+<p>其中L代表marker的位置，是第l位的等位基因频率，是在第l位的第j个样本的基因型（取值0、1、2，分别代表小等位基因纯合、杂合和主等位基因纯合基因型）。</p>
+<p>亲缘关系矩阵的计算是通过GenABLE包中的ibs函数实现的 (Aulchenko et al., 2007)。</p>
+<p>加性效应：（AA-aa）&#x2F;2</p>
+<p>显性效应：Aa-（AA+aa）&#x2F;2</p>
+<p>替换效应：<a target="_blank" rel="noopener" href="https://blog.csdn.net/yijiaobani/article/details/127749608?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~AD_ESQUERY~yljh-1-127749608-blog-71480168.pc_relevant_aa2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~AD_ESQUERY~yljh-1-127749608-blog-71480168.pc_relevant_aa2&amp;utm_relevant_index=2">https://blog.csdn.net/yijiaobani/article/details/127749608?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EAD_ESQUERY%7Eyljh-1-127749608-blog-71480168.pc_relevant_aa2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EAD_ESQUERY%7Eyljh-1-127749608-blog-71480168.pc_relevant_aa2&amp;utm_relevant_index=2</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/17/gwas/" data-id="clamloohd0002fbw8a79ya70d" data-title="gwas" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-r2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/17/r2/" class="article-date">
+  <time class="dt-published" datetime="2022-11-17T15:42:09.000Z" itemprop="datePublished">2022-11-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/17/r2/">r2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>D&#x3D;P(AB)-P(A)*P(B)		各配子基因型绝对值相同，可正可负；因D的取值受人为制定的等位基因频率影响，引入标准化的不平衡系数D’；</p>
+<p>D’&#x3D;D&#x2F;Dmax		不能比较不同研究之间的LD程度且依赖样本量大小，只包括重组史；</p>
+<p>当D&lt;0, Dmax&#x3D;min{P(A)P(B),P(a)P(b)}；</p>
+<p>当D&gt;0, Dmax&#x3D;min{P(A)P(b),P(a)P(B)}</p>
+<hr>
+<p>推导过程：u s t v 分别为AB，Ab，aB，ab频率</p>
+<p>DAB&#x3D;pAB-pApB&#x3D;u(1-u-s-t)-st&#x3D;uv-st</p>
+<p>同理得DAb&#x3D;-（uv-st）</p>
+<p>令uv-st&#x3D;D </p>
+<p>pAB&#x3D;pApB+D pAb&#x3D;pApb-D</p>
+<p>当D&gt;0 因pAb不能为负</p>
+<p>故得出以上结论</p>
+<hr>
+<p>r2&#x3D;D*D&#x2F;(P(A)P(a)P(B)P(b))		包括重组和突变，r2的期望值和有效种群大小和重组系数相关，r2&#x3D;1&#x2F;(1+4NeC),其中Ne是有小种群大小，C是重组系数。<a target="_blank" rel="noopener" href="https://www.plob.org/article/21675.html">https://www.plob.org/article/21675.html</a></p>
+<p>note：R2用于回归评价指标，1表示预测跟真实结果完美匹配</p>
+<p><strong>两个座位间不平衡的显著检验</strong></p>
+<p>卡方检验</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/17/r2/" data-id="clamloohe0005fbw8hssn0mb8" data-title="r2" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-independence-test" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/18/independence-test/" class="article-date">
+  <time class="dt-published" datetime="2022-11-18T02:30:11.000Z" itemprop="datePublished">2022-11-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/18/independence-test/">independence-test</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <table>
+<thead>
+<tr>
+<th>二项分布</th>
+<th>几何分布</th>
+<th>泊松分布</th>
+<th>超几何分布</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>具有可能结果x次的概率</td>
+<td>第x次具有第一次可能结果出现的概率</td>
+<td>某个时间范围内，<br />发生某件事情x次的概率</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>chi.test需所有单元期望数&gt;5,样本数&gt;40</p>
+<p>fisher.test最小单元期望数&lt;5</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/18/independence-test/" data-id="clamloohd0003fbw81da53rht" data-title="independence-test" class="article-share-link">Share</a>
       
       
       
@@ -243,11 +413,23 @@
       <ul>
         
           <li>
-            <a href="/2022/11/17/leilei-blog/">structure</a>
+            <a href="/2022/11/18/independence-test/">independence-test</a>
           </li>
         
           <li>
-            <a href="/2022/11/17/hello-world/">Hello World</a>
+            <a href="/2022/11/17/r2/">r2</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/17/gwas/">gwas</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/17/blup/">BLUP</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/17/g-sequencing/">sequencing</a>
           </li>
         
       </ul>
