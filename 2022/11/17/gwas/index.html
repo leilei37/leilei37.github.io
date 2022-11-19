@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   
   
-  <title>gwas | leilei&#39;s blog</title>
+  <title>gwas-kinship | leilei&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="亲缘关系矩阵（kinship）可以用于群体结构的可视化和关联分析中矫正群体结构混淆造成的高假阳性。我们通过计算个体i和个体j之间的亲缘关系系数来估计亲缘关系矩阵，这种方法是Amin 、Astle 和Balding Amin 所提出的(Amin et al., 2007 , Astle and Balding, 2009)：  其中L代表marker的位置，是第l位的等位基因频率，是在第l位的第j个">
+  <meta name="description" content="亲缘系数（coefficient of kinship）：从两个个体中分别随机抽取一个同源等位基因，这两个基因是IBD的概率（相同且来自同一个祖先）。直接衡量个体间亲缘关系。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="gwas">
+<meta property="og:title" content="gwas-kinship">
 <meta property="og:url" content="http://example.com/2022/11/17/gwas/index.html">
 <meta property="og:site_name" content="leilei&#39;s blog">
-<meta property="og:description" content="亲缘关系矩阵（kinship）可以用于群体结构的可视化和关联分析中矫正群体结构混淆造成的高假阳性。我们通过计算个体i和个体j之间的亲缘关系系数来估计亲缘关系矩阵，这种方法是Amin 、Astle 和Balding Amin 所提出的(Amin et al., 2007 , Astle and Balding, 2009)：  其中L代表marker的位置，是第l位的等位基因频率，是在第l位的第j个">
+<meta property="og:description" content="亲缘系数（coefficient of kinship）：从两个个体中分别随机抽取一个同源等位基因，这两个基因是IBD的概率（相同且来自同一个祖先）。直接衡量个体间亲缘关系。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2022/11/17/gwas/1668757354130.jpg">
 <meta property="article:published_time" content="2022-11-17T13:20:11.000Z">
-<meta property="article:modified_time" content="2022-11-18T15:08:20.053Z">
+<meta property="article:modified_time" content="2022-11-19T08:12:52.345Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2022/11/17/gwas/1668757354130.jpg">
@@ -89,7 +89,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      gwas
+      gwas-kinship
     </h1>
   
 
@@ -97,18 +97,27 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>亲缘关系矩阵（kinship）可以用于群体结构的可视化和关联分析中矫正群体结构混淆造成的高假阳性。我们通过计算个体i和个体j之间的亲缘关系系数来估计亲缘关系矩阵，这种方法是Amin 、Astle 和Balding Amin 所提出的(Amin et al., 2007 , Astle and Balding, 2009)：</p>
-<p><img src="/2022/11/17/gwas/1668757354130.jpg" alt="xxx"></p>
+        <p>亲缘系数（coefficient of kinship）：从两个个体中分别随机抽取一个同源等位基因，这两个基因是IBD的概率（相同且来自同一个祖先）。直接衡量个体间亲缘关系。</p>
+<span id="more"></span>
+
+
+<p>近交系数（inbreeding coefficient, F）：一个个体某个基因座上的两个等位基因为血缘同源（IBD）的概率。衡量父母间亲缘关系。也称固定系数fixation index。</p>
+<p>血缘系数（coefficient of relationship,r ）:有共同祖先的两个个体基因型一致的概率。&#x3D;2 fold coefficient of kinship</p>
+<p>reference: <a target="_blank" rel="noopener" href="https://gwaslab.com/2021/05/22/coefficient-of-kinship-inbreeding-relationship/">https://gwaslab.com/2021/05/22/coefficient-of-kinship-inbreeding-relationship/</a></p>
+<p>遗传分化指数Fst（Wahlund effect：通过Hardy-Weinberg来进行检验，如果很多个亚群被抽样，即便每一个亚群都符合Hardy-Weinberg平衡，那么抽样合并的总体也会偏离Hardy-Weinberg很远。而且这种偏离方向是一样的，即我们观测到的杂合子的数量总是比平衡预期的要少。这种杂合子欠缺的现象就是Wahlund effect（Wahlund 1928）。）<br>（选择信号）-&gt;群体结构</p>
+<p>群体结构矫正：genomic control，PCA</p>
+<p><strong>亲缘关系矩阵（kinship）</strong>可以用于群体结构的可视化和关联分析中矫正群体结构混淆造成的高假阳性。我们通过计算个体i和个体j之间的亲缘关系系数来估计亲缘关系矩阵，这种方法是Amin 、Astle 和Balding Amin 所提出的(Amin et al., 2007 , Astle and Balding, 2009)：</p>
+<p><img src="/2022/11/17/gwas/1668757354130.jpg" alt="kinship"></p>
 <p>其中L代表marker的位置，是第l位的等位基因频率，是在第l位的第j个样本的基因型（取值0、1、2，分别代表小等位基因纯合、杂合和主等位基因纯合基因型）。</p>
 <p>亲缘关系矩阵的计算是通过GenABLE包中的ibs函数实现的 (Aulchenko et al., 2007)。</p>
-<p>加性效应：（AA-aa）&#x2F;2</p>
+<p>加性效应：（AA-aa）&#x2F;2，即育种值。</p>
 <p>显性效应：Aa-（AA+aa）&#x2F;2</p>
 <p>替换效应：<a target="_blank" rel="noopener" href="https://blog.csdn.net/yijiaobani/article/details/127749608?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~AD_ESQUERY~yljh-1-127749608-blog-71480168.pc_relevant_aa2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~AD_ESQUERY~yljh-1-127749608-blog-71480168.pc_relevant_aa2&amp;utm_relevant_index=2">https://blog.csdn.net/yijiaobani/article/details/127749608?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EAD_ESQUERY%7Eyljh-1-127749608-blog-71480168.pc_relevant_aa2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EAD_ESQUERY%7Eyljh-1-127749608-blog-71480168.pc_relevant_aa2&amp;utm_relevant_index=2</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/17/gwas/" data-id="clammzo9v0002vlw81nfuhofq" data-title="gwas" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/11/17/gwas/" data-id="clannn45e0006f1w8dw6w1fn1" data-title="gwas-kinship" class="article-share-link">Share</a>
       
       
       
@@ -168,23 +177,23 @@
       <ul>
         
           <li>
-            <a href="/2022/11/18/independence-test/">independence-test</a>
+            <a href="/2022/11/19/conditional-analysis/">conditional-analysis</a>
           </li>
         
           <li>
-            <a href="/2022/11/17/r2/">r2</a>
+            <a href="/2022/11/19/pick-p/">how to pick &#39;p threshold&#39;？</a>
           </li>
         
           <li>
-            <a href="/2022/11/17/gwas/">gwas</a>
+            <a href="/2022/11/19/WGCNA/">WGCNA</a>
           </li>
         
           <li>
-            <a href="/2022/11/17/blup/">BLUP</a>
+            <a href="/2022/11/19/cluster-analysis/">cluster-analysis</a>
           </li>
         
           <li>
-            <a href="/2022/11/17/g-sequencing/">sequencing</a>
+            <a href="/2022/11/19/Phylogenetic-tree/">Phylogenetic-tree</a>
           </li>
         
       </ul>

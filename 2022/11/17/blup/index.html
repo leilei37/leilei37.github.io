@@ -6,17 +6,21 @@
   
   <title>BLUP | leilei&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Which one should we choose to act as phenotype？  BLUP（best linear unbiased prediction）随机因子 BLUE（best linear unbiased evaluation）固定因子 Means  BLUP formula： 亲缘系数（coefficient of kinship）：从两个个体中分别随机抽取一个同源等">
+  <meta name="description" content="表型值（P）&#x3D;加性遗传效应（A）+显性效应（D）+上位效应（I）+系统环境效应（ES）+随机环境效应（ER） 加性遗传效应即育种值。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BLUP">
 <meta property="og:url" content="http://example.com/2022/11/17/blup/index.html">
 <meta property="og:site_name" content="leilei&#39;s blog">
-<meta property="og:description" content="Which one should we choose to act as phenotype？  BLUP（best linear unbiased prediction）随机因子 BLUE（best linear unbiased evaluation）固定因子 Means  BLUP formula： 亲缘系数（coefficient of kinship）：从两个个体中分别随机抽取一个同源等">
+<meta property="og:description" content="表型值（P）&#x3D;加性遗传效应（A）+显性效应（D）+上位效应（I）+系统环境效应（ES）+随机环境效应（ER） 加性遗传效应即育种值。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190527160924321.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3pqZ3VpbGFp,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190527162817879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3pqZ3VpbGFp,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190527163054642.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3pqZ3VpbGFp,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2022-11-17T13:04:36.000Z">
-<meta property="article:modified_time" content="2022-11-18T14:33:56.858Z">
+<meta property="article:modified_time" content="2022-11-19T08:13:08.293Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190527160924321.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3pqZ3VpbGFp,size_16,color_FFFFFF,t_70">
   
     <link rel="alternate" href="/atom.xml" title="leilei's blog" type="application/atom+xml">
   
@@ -95,17 +99,28 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Which one should we choose to act as phenotype？</p>
+        <p>表型值（P）&#x3D;加性遗传效应（A）+显性效应（D）+上位效应（I）+系统环境效应（ES）+随机环境效应（ER）</p>
+<p>加性遗传效应即<strong>育种值</strong>。</p>
+<span id="more"></span>
+
+
+<p>why use BLUP as phenotype？</p>
+<p>BLUP将基因型当作random effect，估计出方差组分（和遗传力的关系？）</p>
+<p>BLUP和GWAS的区别？</p>
+<p>BLUP可以<strong>预测</strong>出新的表型信息；多环境多重复时使用。</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/jessepeng/p/14146526.html">GWAS与GS模型比较介绍</a></p>
+<p>Which one should we choose to act as phenotype？</p>
 <ol>
-<li>BLUP（best linear unbiased prediction）随机因子</li>
+<li>BLUP（best linear unbiased prediction）随机因子(即u)</li>
 <li>BLUE（best linear unbiased evaluation）固定因子</li>
 <li>Means</li>
 </ol>
 <p>BLUP formula：</p>
-<p>亲缘系数（coefficient of kinship）：从两个个体中分别随机抽取一个同源等位基因，这两个基因是IBD的概率（相同且来自同一个祖先）。直接衡量个体间亲缘关系。</p>
-<p>近交系数（inbreeding coefficient, F）：一个个体某个基因座上的两个等位基因为血缘同源（IBD）的概率。衡量父母间亲缘关系。也称固定系数fixation index。</p>
-<p>血缘系数（coefficient of relationship,r ）:有共同祖先的两个个体基因型一致的概率。&#x3D;2 fold coefficient of kinship</p>
-<p><a target="_blank" rel="noopener" href="https://gwaslab.com/2021/05/22/coefficient-of-kinship-inbreeding-relationship/">https://gwaslab.com/2021/05/22/coefficient-of-kinship-inbreeding-relationship/</a></p>
+<p><img src="https://img-blog.csdnimg.cn/20190527160924321.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3pqZ3VpbGFp,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20190527162817879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3pqZ3VpbGFp,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20190527163054642.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3pqZ3VpbGFp,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>多个固定效应如何添加？（重复？）</p>
+<p>育种值EBV表示的是在所评估的动物群体中，<strong>个体遗传潜力的相对值。</strong></p>
 <p>Advantages of BLUP：</p>
 <ol>
 <li>利用所有亲属信息</li>
@@ -114,13 +129,12 @@
 <li>考虑群体间和世代间的遗传差异</li>
 <li>提供个体育种值的无偏估计</li>
 </ol>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zjguilai/article/details/90605300">https://blog.csdn.net/zjguilai/article/details/90605300</a></p>
-<p>heritability</p>
+<p>图源：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zjguilai/article/details/90605300">https://blog.csdn.net/zjguilai/article/details/90605300</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/17/blup/" data-id="clammzo9r0000vlw85ngaa2x5" data-title="BLUP" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/11/17/blup/" data-id="clannn45b0001f1w88019b0rl" data-title="BLUP" class="article-share-link">Share</a>
       
       
       
@@ -134,7 +148,7 @@
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          gwas
+          gwas-kinship
         
       </div>
     </a>
@@ -180,23 +194,23 @@
       <ul>
         
           <li>
-            <a href="/2022/11/18/independence-test/">independence-test</a>
+            <a href="/2022/11/19/conditional-analysis/">conditional-analysis</a>
           </li>
         
           <li>
-            <a href="/2022/11/17/r2/">r2</a>
+            <a href="/2022/11/19/pick-p/">how to pick &#39;p threshold&#39;？</a>
           </li>
         
           <li>
-            <a href="/2022/11/17/gwas/">gwas</a>
+            <a href="/2022/11/19/WGCNA/">WGCNA</a>
           </li>
         
           <li>
-            <a href="/2022/11/17/blup/">BLUP</a>
+            <a href="/2022/11/19/cluster-analysis/">cluster-analysis</a>
           </li>
         
           <li>
-            <a href="/2022/11/17/g-sequencing/">sequencing</a>
+            <a href="/2022/11/19/Phylogenetic-tree/">Phylogenetic-tree</a>
           </li>
         
       </ul>

@@ -99,16 +99,67 @@
 <li>imputation</li>
 <li>QC（call rate, MAF）</li>
 <li>（样本聚类 欧氏距离</li>
+<li>其他比对 SV、CNV</li>
 </ol>
-        
-          <p class="article-more-link">
-            <a href="/2022/11/17/leilei-blog/#more">Read More</a>
-          </p>
-        
+<p>phenotype preparation</p>
+<ol>
+<li>BLUP</li>
+</ol>
+<p>basic statistics</p>
+<ol>
+<li>distrubution<br>zscore(normalization standardization)</li>
+<li>corelate(pearson,spearman,kendall,<br>fisher,chip-squared test)</li>
+<li>Bayesian</li>
+<li>likelihood</li>
+<li>how to calculate ‘r2’?</li>
+<li>bonferroni</li>
+</ol>
+<p>GWAS</p>
+<ol>
+<li><p>kinship</p>
+<p>How to deal with population strucure?</p>
+<p>（Phylogenetic tree）</p>
+</li>
+<li><p>GWAS model</p>
+<p>what are ‘lambda’，’P’,’PVE’,’effect size’?</p>
+</li>
+<li><p>conditional analysis</p>
+</li>
+<li><p>how to pick ‘p threshold’?<br>(how to calculate independent snp?)</p>
+</li>
+</ol>
+<p>TWAS</p>
+<ol>
+<li>genomic prediction(G matrix)<br>prediction acuracy(cross validation)</li>
+<li>TWAS model</li>
+</ol>
+<p>intergrate</p>
+<ol>
+<li>colocalization</li>
+<li>MR</li>
+</ol>
+<p>ATAC-seq</p>
+<ol>
+<li>chrom accessibility region(where, function)</li>
+<li>sequencing</li>
+<li>flow and note</li>
+</ol>
+<p>bisfule-seq</p>
+<ol>
+<li>sequencing</li>
+<li>flow and note</li>
+<li>DMR</li>
+</ol>
+<p>RNA-seq<br><a target="_blank" rel="noopener" href="https://ming-lian.github.io/2019/02/08/Stat-on-RNAseq/">https://ming-lian.github.io/2019/02/08/Stat-on-RNAseq/</a><br>1.sequencing(depth,coverage,library)<a target="_blank" rel="noopener" href="https://www.jieandze1314.com/post/cnposts/239/">https://www.jieandze1314.com/post/cnposts/239/</a><br>  批次效应 batch<br>2.how to aligh<br>3.flow and note</p>
+<p>find DEG<br>1.deseq principles<br>  qc<br>  最小二乘法</p>
+<p>WGCNA<br>1.soft threshold</p>
+<p><strong>Interpreting literature</strong>：<br>Using Interactome Big Data to Crack Genetic Mysteries and Enhance Future Crop Breeding - ScienceDirect</p>
+<p>Open problems in human trait genetics | Genome Biology</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/17/leilei-blog/" data-id="clammzo9v0003vlw8gvz51y44" data-title="structure" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/11/17/leilei-blog/" data-id="clannn45f0009f1w8dp7k61gr" data-title="structure" class="article-share-link">Share</a>
       
       
       
@@ -149,7 +200,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/17/g-sequencing/" data-id="clammzo9u0001vlw8ew209hry" data-title="sequencing" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/11/17/g-sequencing/" data-id="clannn45d0004f1w86skl7gq3" data-title="sequencing" class="article-share-link">Share</a>
       
       
       
@@ -183,32 +234,17 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Which one should we choose to act as phenotype？</p>
-<ol>
-<li>BLUP（best linear unbiased prediction）随机因子</li>
-<li>BLUE（best linear unbiased evaluation）固定因子</li>
-<li>Means</li>
-</ol>
-<p>BLUP formula：</p>
-<p>亲缘系数（coefficient of kinship）：从两个个体中分别随机抽取一个同源等位基因，这两个基因是IBD的概率（相同且来自同一个祖先）。直接衡量个体间亲缘关系。</p>
-<p>近交系数（inbreeding coefficient, F）：一个个体某个基因座上的两个等位基因为血缘同源（IBD）的概率。衡量父母间亲缘关系。也称固定系数fixation index。</p>
-<p>血缘系数（coefficient of relationship,r ）:有共同祖先的两个个体基因型一致的概率。&#x3D;2 fold coefficient of kinship</p>
-<p><a target="_blank" rel="noopener" href="https://gwaslab.com/2021/05/22/coefficient-of-kinship-inbreeding-relationship/">https://gwaslab.com/2021/05/22/coefficient-of-kinship-inbreeding-relationship/</a></p>
-<p>Advantages of BLUP：</p>
-<ol>
-<li>利用所有亲属信息</li>
-<li>校正环境效应</li>
-<li>校正非随机交配造成的偏差</li>
-<li>考虑群体间和世代间的遗传差异</li>
-<li>提供个体育种值的无偏估计</li>
-</ol>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zjguilai/article/details/90605300">https://blog.csdn.net/zjguilai/article/details/90605300</a></p>
-<p>heritability</p>
-
+        <p>表型值（P）&#x3D;加性遗传效应（A）+显性效应（D）+上位效应（I）+系统环境效应（ES）+随机环境效应（ER）</p>
+<p>加性遗传效应即<strong>育种值</strong>。</p>
+        
+          <p class="article-more-link">
+            <a href="/2022/11/17/blup/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/17/blup/" data-id="clammzo9r0000vlw85ngaa2x5" data-title="BLUP" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/11/17/blup/" data-id="clannn45b0001f1w88019b0rl" data-title="BLUP" class="article-share-link">Share</a>
       
       
       
@@ -234,7 +270,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/11/17/gwas/">gwas</a>
+      <a class="p-name article-title" href="/2022/11/17/gwas/">gwas-kinship</a>
     </h1>
   
 
@@ -242,18 +278,16 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>亲缘关系矩阵（kinship）可以用于群体结构的可视化和关联分析中矫正群体结构混淆造成的高假阳性。我们通过计算个体i和个体j之间的亲缘关系系数来估计亲缘关系矩阵，这种方法是Amin 、Astle 和Balding Amin 所提出的(Amin et al., 2007 , Astle and Balding, 2009)：</p>
-<p><img src="/2022/11/17/gwas/1668757354130.jpg" alt="xxx"></p>
-<p>其中L代表marker的位置，是第l位的等位基因频率，是在第l位的第j个样本的基因型（取值0、1、2，分别代表小等位基因纯合、杂合和主等位基因纯合基因型）。</p>
-<p>亲缘关系矩阵的计算是通过GenABLE包中的ibs函数实现的 (Aulchenko et al., 2007)。</p>
-<p>加性效应：（AA-aa）&#x2F;2</p>
-<p>显性效应：Aa-（AA+aa）&#x2F;2</p>
-<p>替换效应：<a target="_blank" rel="noopener" href="https://blog.csdn.net/yijiaobani/article/details/127749608?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2~default~AD_ESQUERY~yljh-1-127749608-blog-71480168.pc_relevant_aa2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~AD_ESQUERY~yljh-1-127749608-blog-71480168.pc_relevant_aa2&amp;utm_relevant_index=2">https://blog.csdn.net/yijiaobani/article/details/127749608?spm=1001.2101.3001.6650.1&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EAD_ESQUERY%7Eyljh-1-127749608-blog-71480168.pc_relevant_aa2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EAD_ESQUERY%7Eyljh-1-127749608-blog-71480168.pc_relevant_aa2&amp;utm_relevant_index=2</a></p>
-
+        <p>亲缘系数（coefficient of kinship）：从两个个体中分别随机抽取一个同源等位基因，这两个基因是IBD的概率（相同且来自同一个祖先）。直接衡量个体间亲缘关系。</p>
+        
+          <p class="article-more-link">
+            <a href="/2022/11/17/gwas/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/17/gwas/" data-id="clammzo9v0002vlw81nfuhofq" data-title="gwas" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/11/17/gwas/" data-id="clannn45e0006f1w8dw6w1fn1" data-title="gwas-kinship" class="article-share-link">Share</a>
       
       
       
@@ -287,7 +321,10 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>D&#x3D;P(AB)-P(A)*P(B)		各配子基因型绝对值相同，可正可负；因D的取值受人为制定的等位基因频率影响，引入标准化的不平衡系数D’；</p>
+        <span id="more"></span>
+
+
+<p>D&#x3D;P(AB)-P(A)*P(B)		各配子基因型绝对值相同，可正可负；因D的取值受人为制定的等位基因频率影响，引入标准化的不平衡系数D’；</p>
 <p>D’&#x3D;D&#x2F;Dmax		不能比较不同研究之间的LD程度且依赖样本量大小，只包括重组史；</p>
 <p>当D&lt;0, Dmax&#x3D;min{P(A)P(B),P(a)P(b)}；</p>
 <p>当D&gt;0, Dmax&#x3D;min{P(A)P(b),P(a)P(B)}</p>
@@ -295,7 +332,7 @@
 <p>推导过程：u s t v 分别为AB，Ab，aB，ab频率</p>
 <p>DAB&#x3D;pAB-pApB&#x3D;u(1-u-s-t)-st&#x3D;uv-st</p>
 <p>同理得DAb&#x3D;-（uv-st）</p>
-<p>令uv-st&#x3D;D </p>
+<p>令uv-st&#x3D;D</p>
 <p>pAB&#x3D;pApB+D pAb&#x3D;pApb-D</p>
 <p>当D&gt;0 因pAb不能为负</p>
 <p>故得出以上结论</p>
@@ -308,7 +345,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/17/r2/" data-id="clammzo9w0005vlw8cpbs9voj" data-title="r2" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/11/17/r2/" data-id="clannn45f000bf1w85wxm9po5" data-title="r2" class="article-share-link">Share</a>
       
       
       
@@ -342,7 +379,10 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <table>
+        <span id="more"></span>
+
+
+<table>
 <thead>
 <tr>
 <th>二项分布</th>
@@ -370,7 +410,190 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/18/independence-test/" data-id="clammzo9w0004vlw8edvq1vez" data-title="independence-test" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/11/18/independence-test/" data-id="clannn45e0008f1w8fntd1xbp" data-title="independence-test" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-heritability" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/19/heritability/" class="article-date">
+  <time class="dt-published" datetime="2022-11-18T16:59:01.000Z" itemprop="datePublished">2022-11-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/19/heritability/">heritability</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>遗传力（Heritability</strong> ）是我们理解遗传与环境因素对性状影响的基础，定义为 <strong>遗传方差占性状方差（总方差）的比值</strong> ，可以理解为遗传因素对性状的影响，数学上以<strong>h2</strong>表示。</p>
+        
+          <p class="article-more-link">
+            <a href="/2022/11/19/heritability/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/19/heritability/" data-id="clannn45e0007f1w8cl041x5n" data-title="heritability" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-gwas-model" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/19/gwas-model/" class="article-date">
+  <time class="dt-published" datetime="2022-11-19T05:10:09.000Z" itemprop="datePublished">2022-11-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/19/gwas-model/">gwas-model</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Q（群体结构）+K（亲缘关系）模型</p>
+<p>GRAMMAR（Amin et al, 2007）</p>
+<p>EIGENSTRAT（GenABEL qtscore）</p>
+<p><strong>FASTA（GenABEL mmscore）</strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2022/11/19/gwas-model/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/19/gwas-model/" data-id="clannn45f000af1w837nj8bz1" data-title="gwas-model" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Phylogenetic-tree" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/19/Phylogenetic-tree/" class="article-date">
+  <time class="dt-published" datetime="2022-11-19T06:34:32.000Z" itemprop="datePublished">2022-11-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/19/Phylogenetic-tree/">Phylogenetic-tree</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <span id="more"></span>
+
+
+<p>Wright-Fisher模型：从前向后或由过去推测现在的基因谱系研究方法。</p>
+<p>基因融合模型</p>
+<p>Bootstrap value</p>
+<h5 id="model"><a href="#model" class="headerlink" title="model"></a>model</h5><p>矩阵法：近邻结合法 neighbor-joining (NJ)</p>
+<p>简约法：最大简约法 maximum parsimony (MP)</p>
+<p>最大似然法：最大似然估计 maximum likelihood (ML)</p>
+<p>后验概率法：贝叶斯法 Bayesian</p>
+<h5 id="tools"><a href="#tools" class="headerlink" title="tools"></a>tools</h5><p>BEAST2 (Bayesian):<a target="_blank" rel="noopener" href="https://github.com/CompEvol/beast2.git">https://github.com/CompEvol/beast2.git</a></p>
+<p>MrBayes:<a target="_blank" rel="noopener" href="http://mrbayes.csit.fsu.edu/index.php">http://mrbayes.csit.fsu.edu/index.php</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/19/Phylogenetic-tree/" data-id="clannn4590000f1w8hf5eapts" data-title="Phylogenetic-tree" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-cluster-analysis" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/19/cluster-analysis/" class="article-date">
+  <time class="dt-published" datetime="2022-11-19T07:01:13.000Z" itemprop="datePublished">2022-11-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/19/cluster-analysis/">cluster-analysis</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <span id="more"></span>
+
+
+<p>为了探究表达基因在组织间的保守性和多样性，挖掘组织间不同生态型表达的保守性和多样性，我们对玉米关联群体中298个生态型在7个组织中的表达矩阵进行聚类分析。为了避免低表达基因或未表达基因对结果造成的影响，我们在每个组织中筛选相同的100个个体和5000个基因表达量用于后续分析。为了避免不同组织以及基因表达差异的影响，我们首先使用z-score公式（公式2.2）对每个基因在不同个体中的表达数据进行归一化，随后使用处理过的表达量信息计算两两样本间的欧式距离，然后利用欧式距离实现样本的聚类。</p>
+<p>我们使用R语言的gplot包中的heatmap.2函数进行聚类分析(Warnes et al., 2015)。</p>
+<p>欧式距离：</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/19/cluster-analysis/" data-id="clannn45d0003f1w8528gcnv4" data-title="cluster-analysis" class="article-share-link">Share</a>
       
       
       
@@ -383,6 +606,11 @@
 
   
 
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
 
 </section>
         
@@ -413,23 +641,23 @@
       <ul>
         
           <li>
-            <a href="/2022/11/18/independence-test/">independence-test</a>
+            <a href="/2022/11/19/conditional-analysis/">conditional-analysis</a>
           </li>
         
           <li>
-            <a href="/2022/11/17/r2/">r2</a>
+            <a href="/2022/11/19/pick-p/">how to pick &#39;p threshold&#39;？</a>
           </li>
         
           <li>
-            <a href="/2022/11/17/gwas/">gwas</a>
+            <a href="/2022/11/19/WGCNA/">WGCNA</a>
           </li>
         
           <li>
-            <a href="/2022/11/17/blup/">BLUP</a>
+            <a href="/2022/11/19/cluster-analysis/">cluster-analysis</a>
           </li>
         
           <li>
-            <a href="/2022/11/17/g-sequencing/">sequencing</a>
+            <a href="/2022/11/19/Phylogenetic-tree/">Phylogenetic-tree</a>
           </li>
         
       </ul>
