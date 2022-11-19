@@ -13,12 +13,10 @@
 <meta property="og:site_name" content="leilei&#39;s blog">
 <meta property="og:description" content="精细定位">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="file:////Users/leilei/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image002.png">
 <meta property="article:published_time" content="2022-11-19T08:02:20.000Z">
-<meta property="article:modified_time" content="2022-11-19T08:13:25.609Z">
+<meta property="article:modified_time" content="2022-11-19T08:25:29.802Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="file:////Users/leilei/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image002.png">
   
     <link rel="alternate" href="/atom.xml" title="leilei's blog" type="application/atom+xml">
   
@@ -101,13 +99,13 @@
 <span id="more"></span>
 
 
-<p>上一步计算出eGWAS的阈值之后，我们进行eQTL的精细定位。eGWAS的定位结果常常用曼哈顿图展示，曼哈顿图的横轴为SNP的在染色体上的坐标位置，纵轴为各SNP的<img src="file:////Users/leilei/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image002.png" alt="img">，SNP的P值越小，峰越高。曼哈顿图中过阈值的点代表与性状显著关联的QTL，同一个峰值常常存在着多个与性状显著关联的QTL，这些QTL中有些有很强的连锁不平衡，不是独立的SNP。为了区分这些SNPs，以精细定位到独立的QTL，我们使用了顺序逐步回归的方法（Yang et al.,2012）。此方法是将SNP按P值从小到大逐个引入模型，每引入一个SNP后都要对剩下的每个SNP分别进行检验，并估计前面所有选定的SNPs的联合效应。这样可以识别一个位点上的次级关联信号，以该位点上的主要关联SNP作为条件进行LD修正，从而检测是否存在其他显著关联的SNP，最终保证所有得到的SNP都是最优的。</p>
+<p>上一步计算出eGWAS的阈值之后，我们进行eQTL的精细定位。eGWAS的定位结果常常用曼哈顿图展示，曼哈顿图的横轴为SNP的在染色体上的坐标位置，纵轴为各SNP的log10（P），SNP的P值越小，峰越高。曼哈顿图中过阈值的点代表与性状显著关联的QTL，同一个峰值常常存在着多个与性状显著关联的QTL，这些QTL中有些有很强的连锁不平衡，不是独立的SNP。为了区分这些SNPs，以精细定位到独立的QTL，我们使用了顺序逐步回归的方法（Yang et al.,2012）。此方法是将SNP按P值从小到大逐个引入模型，每引入一个SNP后都要对剩下的每个SNP分别进行检验，并估计前面所有选定的SNPs的联合效应。这样可以识别一个位点上的次级关联信号，以该位点上的主要关联SNP作为条件进行LD修正，从而检测是否存在其他显著关联的SNP，最终保证所有得到的SNP都是最优的。</p>
 <p>我们使用GCTA-COJO（multi-SNP-based conditional &amp; joint association analysis using GWAS summary data）来进行QTL精细定位（Yang et<br>al.,2012）。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/19/conditional-analysis/" data-id="clannn45d0005f1w847057h0r" data-title="conditional-analysis" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/11/19/conditional-analysis/" data-id="clano2zx30004njw8ayss0gvo" data-title="conditional-analysis" class="article-share-link">Share</a>
       
       
       
