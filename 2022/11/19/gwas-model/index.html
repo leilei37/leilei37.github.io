@@ -16,7 +16,7 @@
 <meta property="og:image" content="http://example.com/2022/11/19/gwas-model/1668845229950.png">
 <meta property="og:image" content="http://example.com/2022/11/19/gwas-model/1668845188683.png">
 <meta property="article:published_time" content="2022-11-19T05:10:09.000Z">
-<meta property="article:modified_time" content="2022-11-19T08:57:44.231Z">
+<meta property="article:modified_time" content="2022-11-19T08:59:47.581Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2022/11/19/gwas-model/1668845229950.png">
@@ -107,8 +107,7 @@
 
 <p>我们使用混合线性模型对eQTL进行定位：</p>
 <p><img src="/2022/11/19/gwas-model/1668845229950.png" alt="foo"></p>
-<p>其中Y为中心化和标准化后的表达表型，属于正态分布，均值为0；X为nx2的固定效应的设计矩阵，其中n&#x3D;298，第一列代表为单位向量，第二列代表每个生态型所关联SNP的等位基因计数（取值0、1、2，分别代表小等位基因纯合、杂合和主等位基因纯合基因型）的矩阵；beta为长度为2的向量，代表群体均值和SNP的加性效应；Z是随机效应的设计矩阵，通过对亲属矩阵G的Cholesky分解得到，其中G是使用GenABEL软件包中的ibs函数（option weight &#x3D; ‘freq’）对全基因组MAF过滤过的SNP数据估计而来的（Aulchenko et al. ,2007 ）；e为随机残差。由于Z矩阵满足ZZ’&#x3D;G，因此随机效应</p>
-<p><img src="/2022/11/19/gwas-model/1668845188683.png" alt="bar"></p>
+<p>其中Y为中心化和标准化后的表达表型，属于正态分布，均值为0；X为nx2的固定效应的设计矩阵，其中n&#x3D;298，第一列代表为单位向量，第二列代表每个生态型所关联SNP的等位基因计数（取值0、1、2，分别代表小等位基因纯合、杂合和主等位基因纯合基因型）的矩阵；beta为长度为2的向量，代表群体均值和SNP的加性效应；Z是随机效应的设计矩阵，通过对亲属矩阵G的Cholesky分解得到，其中G是使用GenABEL软件包中的ibs函数（option weight &#x3D; ‘freq’）对全基因组MAF过滤过的SNP数据估计而来的（Aulchenko et al. ,2007 ）；e为随机残差。由于Z矩阵满足ZZ’&#x3D;G，因此随机效应<img src="/2022/11/19/gwas-model/1668845188683.png" alt="bar">。</p>
 <p>我们使用R语言中GenABEL包(Aulchenko et al., 2007)内置的polygenic 和mmscore（mixed model approximation analysis）函数进行以上的计算。</p>
 <p>矩阵版模型：</p>
 <p>plink、tassel使用的模型？</p>
@@ -119,7 +118,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/19/gwas-model/" data-id="clanp64zi0005c4w87va1h21s" data-title="gwas-model" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/11/19/gwas-model/" data-id="clanpamvt0006gow836utaq7l" data-title="gwas-model" class="article-share-link">Share</a>
       
       
       
@@ -179,10 +178,6 @@
       <ul>
         
           <li>
-            <a href="/2022/11/19/gwasmodel/">gwasmodel</a>
-          </li>
-        
-          <li>
             <a href="/2022/11/19/conditional-analysis/">conditional-analysis</a>
           </li>
         
@@ -196,6 +191,10 @@
         
           <li>
             <a href="/2022/11/19/cluster-analysis/">cluster-analysis</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/19/Phylogenetic-tree/">Phylogenetic-tree</a>
           </li>
         
       </ul>
