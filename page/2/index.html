@@ -99,12 +99,13 @@
 <p>为了探究组织间的共表达网络的保守性和多样性，我们进行了加权共表达网络的构建。本部分使用R语言的<a href=""></a><a href="">WGCNA</a>包进行分析(Langfelder and<br>Horvath, 2008)。</p>
 <p>首先我们进行数据整理，在每个组织中随机选取2000个表达基因，通过“goodSamplesGenes”函数检验缺失值并对缺失值处理，随后通过样本聚类分析剔除离群样本，从而减少样本因素导致的误差。</p>
 <p>其次，我们对样本进行了层次聚类，进一步使用bicor相关系数进行基因间的表达相关系数的计算，后选取拟合曲线第一次接近0.9时的软阈值参数，将基因分类构成基因共表达模块，并验证共表达网络是否符合无尺度网络，即出现连接度为k的节点的对数log（k）与该节点出现的概率的对数log（P（k））要负相关，且相关系数要大于0.85。本研究通过“pickSoftThreshold”函数进行筛选最佳软阈值筛选。</p>
+<p>(SoftThreshold)</p>
 <p>再次，我们将表达矩阵转换成邻接矩阵，然后再将邻接矩阵转换成拓扑矩阵（TOM），基于TOM，我们使用average-linkage层次聚类法对基因进行聚类，按照混合动态剪切法在确定基因模块后，我们依次计算每个模块的特征向量值（eigengenes），然后对模块进行聚类分析，将距离较近的模块合并成新的模块，本部分使用“blockwiseModules”函数进行分析，设置mergeCutHeight &#x3D;0.1、deepSplit&#x3D;2、minModuleSize&#x3D;30、pamStage&#x3D;F。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/19/WGCNA/" data-id="clanpamvq0001gow83xjs0ufc" data-title="WGCNA" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/11/19/WGCNA/" data-id="claov9i3m0001fmw89yh50bax" data-title="WGCNA" class="article-share-link">Share</a>
       
       
       
@@ -147,7 +148,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/19/pick-p/" data-id="clanpamvu000agow85ju46i6a" data-title="how to pick &#39;p threshold&#39;？" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/11/19/pick-p/" data-id="claov9i3t000cfmw8cbu23vdi" data-title="how to pick &#39;p threshold&#39;？" class="article-share-link">Share</a>
       
       
       
@@ -190,7 +191,50 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/19/conditional-analysis/" data-id="clanpamvs0004gow85s2nafq4" data-title="conditional-analysis" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/11/19/conditional-analysis/" data-id="claov9i3q0003fmw86eosbs7r" data-title="conditional-analysis" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-deg" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/20/deg/" class="article-date">
+  <time class="dt-published" datetime="2022-11-20T04:21:37.000Z" itemprop="datePublished">2022-11-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/11/20/deg/">deg</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>DEG principle</p>
+        
+          <p class="article-more-link">
+            <a href="/2022/11/20/deg/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/20/deg/" data-id="claov9i3q0005fmw83wqhedz8" data-title="deg" class="article-share-link">Share</a>
       
       
       
@@ -238,6 +282,10 @@
       <ul>
         
           <li>
+            <a href="/2022/11/20/deg/">deg</a>
+          </li>
+        
+          <li>
             <a href="/2022/11/19/conditional-analysis/">conditional-analysis</a>
           </li>
         
@@ -251,10 +299,6 @@
         
           <li>
             <a href="/2022/11/19/cluster-analysis/">cluster-analysis</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/19/Phylogenetic-tree/">Phylogenetic-tree</a>
           </li>
         
       </ul>

@@ -14,7 +14,7 @@
 <meta property="og:description" content="how to pick ‘p threshold’？">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-19T07:59:13.000Z">
-<meta property="article:modified_time" content="2022-11-19T08:14:24.771Z">
+<meta property="article:modified_time" content="2022-11-20T04:34:24.222Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -98,13 +98,15 @@
         <p>how to pick ‘p threshold’？</p>
 <span id="more"></span>
 
+<p>how to calculate independent snp?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar gec.jar -Xmx1g --effect-number --plink-binary /data/plink --genome --out ./output</span><br></pre></td></tr></table></figure>
 
 <p>GWAS是一种单变量回归分析，待检验的SNPs数量（设为n）众多，而真正与表达性状关联的SNPs数量（设为a）却非常少，假设每次检验的显著水平为b，那么假阳性SNPs的数目为b（n-a）个，又因为n远远大于a，最终假阳性SNPs的数目会达到bn个。为了控制多次检验的假阳性率，我们进行多重检验校正，即通过调整单个检验的显著水平，控制整个检验的假阳性率在较低水平。多重校正的标准主要有FWER（Family-Wise Error Rate, FWER）和FDR（False Discovery Rate, FDR）两种(Benjamini and Hochberg, 1995)，但基于FDR标准的校正方法不如基于FWER标准的方法严格，所以我们采用基于FWER标准的Bonferroni校正法。Bonfenrrini校正的前提是每次实验都是独立的，但在GWAS分析中，SNP之间存在连锁不平衡（LD）。所以，我们使用Li 等人文章中的方法（Li et al.,2012）计算出等效的独立SNP个数，随后对结果的阈值进行校正，把P值与检验次数的比值作为阈值，最终估算出eGWAS的阈值。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/19/pick-p/" data-id="clanpamvu000agow85ju46i6a" data-title="how to pick &#39;p threshold&#39;？" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/11/19/pick-p/" data-id="claov9i3t000cfmw8cbu23vdi" data-title="how to pick &#39;p threshold&#39;？" class="article-share-link">Share</a>
       
       
       
@@ -164,6 +166,10 @@
       <ul>
         
           <li>
+            <a href="/2022/11/20/deg/">deg</a>
+          </li>
+        
+          <li>
             <a href="/2022/11/19/conditional-analysis/">conditional-analysis</a>
           </li>
         
@@ -177,10 +183,6 @@
         
           <li>
             <a href="/2022/11/19/cluster-analysis/">cluster-analysis</a>
-          </li>
-        
-          <li>
-            <a href="/2022/11/19/Phylogenetic-tree/">Phylogenetic-tree</a>
           </li>
         
       </ul>
