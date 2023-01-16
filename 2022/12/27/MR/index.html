@@ -209,10 +209,17 @@
 <li>the existence of instruments</li>
 <li>Power (snp explain small phenotypic vatiance;require large sample size)and weak instrument(snp are weak proxies for exposure;results in biased causality) -&gt; using multiple snp as IV(allelic scores)[Palmer TM, Lawlor DA, Harbord RM, Sheehan NA, Tobias JH, Timpson NJ, Davey Smith G, Sterne JA. Using multiple genetic variants as instrumental variables for modifiable risk factors. Stat Methods Med Res. 2012 Jun;21(3):223-42. doi: 10.1177&#x2F;0962280210394459. Epub 2011 Jan 7. PMID: 21216802; PMCID: PMC3917707.]</li>
 </ol>
-<p><a target="_blank" rel="noopener" href="http://html.rhhz.net/zhlxbx/20200813.htm">http://html.rhhz.net/zhlxbx/20200813.htm</a><br>MR analysis or colocalization analysis</p>
 <p><a target="_blank" rel="noopener" href="https://www.mendelianrandomization.com/index.php/what-is-mr">https://www.mendelianrandomization.com/index.php/what-is-mr</a><br>Reasons of false negative:<br>Horizontal pleiotropic (水平多效性) 会影响IVW和SMR结果。即如果存在多个协变量和&#x2F;或遗传变量，则任何假设检验方法都需要考虑每个协变量的多重比较，这也导致我们检测真正因果关联的效力下降（假阴性率升高）。<br>如果与1个暴露关联的10个工具变量没有全部证明与结果有关，即有可能具有多效性。</p>
 <p>因此，在MR分析中，有几点问题需要注意：（1）弱工具变量问题：MR方法的检验效能高低与工具变量与暴露因素之间的关联强度密切相关，弱工具变量会导致结果出现偏差；（2）多效性问题：当工具变量存在多效性问题，其因果推断的结论解释需谨慎，需要采用不同的方法进行分析，以期得到稳健的结果；（3）把握度低问题：MR分析往往需要大样本数据才能达到足够的把握度，可整合公共数据库中基于大样本的汇总数据进行因果推断；（4）设计所带来的混杂问题：在病例-对照研究中，由于其设计本身会引入一些混杂，导致工具变量与混杂之间的独立性假设不成立，对于此类数据的MR分析需要寻求合适的解决策略；<br>**（5）效应值方向问题：两阶段MR分析中，需要确保工具变量-暴露以及工具变量-结局关联分析中效应等位基因（effect allele）是一致的；<br>（6）人群异质性问题：两阶段MR分析中，需保证工具变量-暴露以及工具变量-结局关联分析汇总是来自于同质的人群，或校正过人群结构，否则会导致估计有偏。<br>Beavis效应</p>
+<h4 id="Deal-with-pleiotropy-Heterogeneity"><a href="#Deal-with-pleiotropy-Heterogeneity" class="headerlink" title="Deal with pleiotropy - Heterogeneity"></a>Deal with pleiotropy - Heterogeneity</h4><p>Q test</p>
+<ol>
+<li>remove outliers:MR presso, HEIDI test</li>
+<li>Multivariable MR</li>
+<li>Fit a model that is robust to some model of horizontal pleiotropy</li>
+</ol>
+<h3 id="Methods-of-MR"><a href="#Methods-of-MR" class="headerlink" title="Methods of MR"></a>Methods of MR</h3><p>IVW and Weighted linear regression(can’t use in pleiotropy)<br>MR Egger(InSIDE Assumption: no correlation between QTL and eQTL effect)</p>
 <p>two samples MR：<br>note:the issue of strand(回文变体，change the direction of effect size )</p>
+<p><a target="_blank" rel="noopener" href="http://html.rhhz.net/zhlxbx/20200813.htm">http://html.rhhz.net/zhlxbx/20200813.htm</a><br>MR analysis or colocalization analysis</p>
 
         </div>
 
@@ -232,7 +239,7 @@
 <nav class="article-nav">
   
     <a href="/2023/01/02/LD-score-regression/" id="article-nav-newer" class="article-nav-link-wrap">
-      <div class="article-nav-caption">下一篇</div>
+      <div class="article-nav-caption">次の記事</div>
       <div class="article-nav-title">
         
           LD score regression
@@ -242,7 +249,7 @@
   
   
     <a href="/2022/12/10/gs/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-caption">上一篇</div>
+      <div class="article-nav-caption">前の記事</div>
       <div class="article-nav-title">gs</div>
     </a>
   
@@ -250,7 +257,7 @@
 
 
     <section class="share">
-        <div class="share-title">分享</div>
+        <div class="share-title">シェア</div>
         <a class="share-item" target="_blank"
             href="https://twitter.com/share?text=MR - leilei's blog&url=http%3A%2F%2Fexample.com%2F2022%2F12%2F27%2FMR%2F">
             <ion-icon name="logo-twitter"></ion-icon>
@@ -314,6 +321,10 @@
       <ul>
         
           <li>
+            <a href="/2023/01/16/article/">article</a>
+          </li>
+        
+          <li>
             <a href="/2023/01/11/pro-Li/">Probability and Likelihood</a>
           </li>
         
@@ -327,10 +338,6 @@
         
           <li>
             <a href="/2022/12/27/MR/">MR</a>
-          </li>
-        
-          <li>
-            <a href="/2022/12/10/gs/">gs</a>
           </li>
         
       </ul>
