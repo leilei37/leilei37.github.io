@@ -311,7 +311,9 @@ class="article article-type-post"
     </header>
     <div class="article-entry post-inner-html">
         
-        <p><strong>精细定位</strong></p>
+        <p><strong>精细定位</strong><br>通常情况下GWAS或是meta分析检验的是基于单个SNP模型的相关，所估计的效应量为被检验SNP的边际效应，但相比于多SNP模型的联合效应，单个SNP模型的边际效应并没有考虑该SNP与周围SNP的LD。</p>
+<p>这会带来两个问题：</p>
+<p>如果两个SNP成负相关，那么这两个SNP的效应都会被减弱。<br>如果两个SNP都达到了显著的阈值，事后很难通过LD来确定这两个SNP的相关的程度。</p>
         
     </div>
     </div>
@@ -625,13 +627,14 @@ class="article article-type-post"
 <p>因此，在MR分析中，有几点问题需要注意：（1）弱工具变量问题：MR方法的检验效能高低与工具变量与暴露因素之间的关联强度密切相关，弱工具变量会导致结果出现偏差；（2）多效性问题：当工具变量存在多效性问题，其因果推断的结论解释需谨慎，需要采用不同的方法进行分析，以期得到稳健的结果；（3）把握度低问题：MR分析往往需要大样本数据才能达到足够的把握度，可整合公共数据库中基于大样本的汇总数据进行因果推断；（4）设计所带来的混杂问题：在病例-对照研究中，由于其设计本身会引入一些混杂，导致工具变量与混杂之间的独立性假设不成立，对于此类数据的MR分析需要寻求合适的解决策略；<br>**（5）效应值方向问题：两阶段MR分析中，需要确保工具变量-暴露以及工具变量-结局关联分析中效应等位基因（effect allele）是一致的；<br>（6）人群异质性问题：两阶段MR分析中，需保证工具变量-暴露以及工具变量-结局关联分析汇总是来自于同质的人群，或校正过人群结构，否则会导致估计有偏。<br>Beavis效应</p>
 <h4 id="Deal-with-pleiotropy-Heterogeneity"><a href="#Deal-with-pleiotropy-Heterogeneity" class="headerlink" title="Deal with pleiotropy - Heterogeneity"></a>Deal with pleiotropy - Heterogeneity</h4><p>Q test</p>
 <ol>
-<li>remove outliers:MR presso, HEIDI test</li>
+<li>remove outliers:MR presso, HEIDI test( HEIDI (heterogeneity in dependent instruments), using multiple SNPs in a cis-eQTL region to distinguish pleiotropy from linkage)</li>
 <li>Multivariable MR</li>
 <li>Fit a model that is robust to some model of horizontal pleiotropy</li>
 </ol>
 <h3 id="Methods-of-MR"><a href="#Methods-of-MR" class="headerlink" title="Methods of MR"></a>Methods of MR</h3><p>IVW and Weighted linear regression(can’t use in pleiotropy)<br>MR Egger(InSIDE Assumption: no correlation between QTL and eQTL effect)</p>
 <p>two samples MR：<br>note:the issue of strand(回文变体，change the direction of effect size )</p>
 <p><a target="_blank" rel="noopener" href="http://html.rhhz.net/zhlxbx/20200813.htm">http://html.rhhz.net/zhlxbx/20200813.htm</a><br>MR analysis or colocalization analysis</p>
+<p>？TWAS定位到的gene-trait关系但并不能MR显著是否因为工具变量选择的问题？<br>工具变量对暴露和结果之间关系的影响？<br>TWAS和eQTL结合时 是否因为GWAS的p值可靠性差 真实情况是有effect size的</p>
 
         
     </div>
@@ -703,6 +706,14 @@ class="article article-type-post"
       <ul>
         
           <li>
+            <a href="/2023/04/12/DataScience/">DataScience</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/05/prs/">PRS</a>
+          </li>
+        
+          <li>
             <a href="/2023/01/16/article/">Article</a>
           </li>
         
@@ -712,14 +723,6 @@ class="article article-type-post"
         
           <li>
             <a href="/2023/01/02/LD-score-regression/">LD score regression</a>
-          </li>
-        
-          <li>
-            <a href="/2022/12/27/MR/">MR</a>
-          </li>
-        
-          <li>
-            <a href="/2022/12/10/gs/">gs</a>
           </li>
         
       </ul>

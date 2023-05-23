@@ -9,7 +9,7 @@
     <title>BLUP | leilei&#39;s blog</title>
 
     <meta name="description" content="&lt;p&gt;表型值（P）&amp;#x3D;加性遗传效应（A）+显性效应（D）+上位效应（I）+系统环境效应（ES）+随机环境效应（ER）&lt;/p&gt;
-&lt;p&gt;加性遗传效应即&lt;strong&gt;育种值&lt;/strong&gt;。&lt;/p&gt;">
+&lt;p&gt;加性遗传效应即&lt;strong&gt;育种值&lt;/strong&gt;(EBV)。&lt;/p&gt;">
     <meta name="keywords" content="">
 
     
@@ -18,20 +18,20 @@
     <meta property="og:type" content="article" />
     <meta property="og:title" content= "BLUP | leilei&#39;s blog"  />
     <meta property="og:description" content= "&lt;p&gt;表型值（P）&amp;#x3D;加性遗传效应（A）+显性效应（D）+上位效应（I）+系统环境效应（ES）+随机环境效应（ER）&lt;/p&gt;
-&lt;p&gt;加性遗传效应即&lt;strong&gt;育种值&lt;/strong&gt;。&lt;/p&gt;" />
+&lt;p&gt;加性遗传效应即&lt;strong&gt;育种值&lt;/strong&gt;(EBV)。&lt;/p&gt;" />
     <meta property="og:url" content="http://example.com/2022/11/17/blup/index.html" />
     <meta property="og:site_name" content="" />
     <meta property="article:author" content="leilei" />
     <meta property="article:publisher" content="" />
     <meta property="og:description" content="&lt;p&gt;表型值（P）&amp;#x3D;加性遗传效应（A）+显性效应（D）+上位效应（I）+系统环境效应（ES）+随机环境效应（ER）&lt;/p&gt;
-&lt;p&gt;加性遗传效应即&lt;strong&gt;育种值&lt;/strong&gt;。&lt;/p&gt;" />
+&lt;p&gt;加性遗传效应即&lt;strong&gt;育种值&lt;/strong&gt;(EBV)。&lt;/p&gt;" />
     <meta name="twitter:title" content="BLUP | leilei&#39;s blog"/>
     <meta name="twitter:description" content="&lt;p&gt;表型值（P）&amp;#x3D;加性遗传效应（A）+显性效应（D）+上位效应（I）+系统环境效应（ES）+随机环境效应（ER）&lt;/p&gt;
-&lt;p&gt;加性遗传效应即&lt;strong&gt;育种值&lt;/strong&gt;。&lt;/p&gt;"/>
+&lt;p&gt;加性遗传效应即&lt;strong&gt;育种值&lt;/strong&gt;(EBV)。&lt;/p&gt;"/>
     <script type="application/ld+json">
         {
             "description": "&lt;p&gt;表型值（P）&amp;#x3D;加性遗传效应（A）+显性效应（D）+上位效应（I）+系统环境效应（ES）+随机环境效应（ER）&lt;/p&gt;
-&lt;p&gt;加性遗传效应即&lt;strong&gt;育种值&lt;/strong&gt;。&lt;/p&gt;",
+&lt;p&gt;加性遗传效应即&lt;strong&gt;育种值&lt;/strong&gt;(EBV)。&lt;/p&gt;",
             "author": { "@type": "Person", "name": "leilei" },
             "@type": "BlogPosting",
             "url": "http://example.com/2022/11/17/blup/index.html",
@@ -202,10 +202,9 @@
 
         <div class="article-entry post-inner-html hairline" itemprop="articleBody">
             <p>表型值（P）&#x3D;加性遗传效应（A）+显性效应（D）+上位效应（I）+系统环境效应（ES）+随机环境效应（ER）</p>
-<p>加性遗传效应即<strong>育种值</strong>。</p>
+<p>加性遗传效应即<strong>育种值</strong>(EBV)。</p>
 <span id="more"></span>
-
-
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/590877852">使用遗传力计算EBV</a></p>
 <p>why use BLUP as phenotype？</p>
 <p>BLUP将基因型当作random effect，估计出方差组分（和遗传力的关系？）</p>
 <p>BLUP和GWAS的区别？</p>
@@ -214,14 +213,16 @@
 <p>利用遗传力计算育种值：<a target="_blank" rel="noopener" href="https://luansheng.netlify.app/2017/07/20/lmm-for-ebv-prediction-note-1/">https://luansheng.netlify.app/2017/07/20/lmm-for-ebv-prediction-note-1/</a></p>
 <p>Which one should we choose to act as phenotype？</p>
 <ol>
-<li>BLUP（best linear unbiased prediction）随机因子(即u)</li>
+<li>BLUP（best linear unbiased prediction）随机因子(即u)加性效应</li>
 <li>BLUE（best linear unbiased evaluation）固定因子</li>
 <li>Means</li>
 </ol>
+<p>why it is BLUP？<br>best：和真实育种值的差距最小<br>unbiased: E(a)&#x3D;E(a.hat)<br>prediction: fixed effect &#x3D; estimators; random effect &#x3D; predictors</p>
 <p>BLUP formula：</p>
 <p><img src="https://img-blog.csdnimg.cn/20190527160924321.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3pqZ3VpbGFp,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p><img src="https://img-blog.csdnimg.cn/20190527162817879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3pqZ3VpbGFp,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p><img src="https://img-blog.csdnimg.cn/20190527163054642.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3pqZ3VpbGFp,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>lambda&#x3D;(1-h2)&#x2F;h2<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/590881114">举例更清晰版</a></p>
 <p>多个固定效应如何添加？（重复？）</p>
 <p>育种值EBV表示的是在所评估的动物群体中，<strong>个体遗传潜力的相对值。</strong></p>
 <p>Advantages of BLUP：</p>
@@ -233,6 +234,8 @@
 <li>提供个体育种值的无偏估计</li>
 </ol>
 <p>图源：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zjguilai/article/details/90605300">https://blog.csdn.net/zjguilai/article/details/90605300</a></p>
+<p>【混合线性模型<br>加性模型<br>snpblup&#x3D;gblup lasso】</p>
+<p>可塑性：个体受环境影响表型变化的程度<br>均值和可塑性的关系】<br>eigenvalue和性状做关联</p>
 
         </div>
 
@@ -340,6 +343,14 @@
       <ul>
         
           <li>
+            <a href="/2023/04/12/DataScience/">DataScience</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/05/prs/">PRS</a>
+          </li>
+        
+          <li>
             <a href="/2023/01/16/article/">Article</a>
           </li>
         
@@ -349,14 +360,6 @@
         
           <li>
             <a href="/2023/01/02/LD-score-regression/">LD score regression</a>
-          </li>
-        
-          <li>
-            <a href="/2022/12/27/MR/">MR</a>
-          </li>
-        
-          <li>
-            <a href="/2022/12/10/gs/">gs</a>
           </li>
         
       </ul>

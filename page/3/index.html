@@ -221,12 +221,16 @@ class="article article-type-post"
 <h2 id="Likehood-and-probability"><a href="#Likehood-and-probability" class="headerlink" title="Likehood and probability"></a>Likehood and probability</h2><p>e&#x3D;y-ax-b<br>maxlikelihood：假设1.e独立<br>                  2.e残差的分布服从同分布<br>                  3.e同标准差</p>
 <p>如果e的标准差不相同，可以用加权最小二乘法。<br>csdn<br>马同学图解数学</p>
 <h2 id="regularization-Regression-boosting-bagging-radom-forest"><a href="#regularization-Regression-boosting-bagging-radom-forest" class="headerlink" title="regularization Regression(boosting,bagging:radom forest)"></a>regularization Regression(boosting,bagging:radom forest)</h2><p>slope推导 <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzIxNjA2ODUzNg==&mid=2651435962&idx=1&sn=c0e4ef18f746fef7eb1a7c89c6cbb83e&chksm=8c73ab6dbb04227bca9a2c396fe45f3a7bdbd98bdb2493f983062393032d4310fed1aa5149a6&scene=21#wechat_redirect">link</a></p>
-<h3 id="Ridge"><a href="#Ridge" class="headerlink" title="Ridge"></a>Ridge</h3><p>bia:difference between fit model and training point<br>variance：difference between fit model and testing point<br>the sum of squared residuals + lambda * Slope2（Ridge Regression Penalty） -&gt; 最小时决定slope<br>(relation between lambda and slope? lambda增slope减)<br>lambda is determined by cross validation（lambda,y-intercept,slope决定的variance最小）<br>几何图表示 <a target="_blank" rel="noopener" href="https://blog.51cto.com/u_9205406/5606772">https://blog.51cto.com/u_9205406/5606772</a></p>
-<h3 id="Lasso"><a href="#Lasso" class="headerlink" title="Lasso"></a>Lasso</h3><p>the sum of squared residuals + lambda * ｜Slope2｜<br>slope can be 0</p>
-<h3 id="Elastic-net"><a href="#Elastic-net" class="headerlink" title="Elastic-net"></a>Elastic-net</h3><p>when parameters correlate</p>
+<h3 id="Ridge-L2"><a href="#Ridge-L2" class="headerlink" title="Ridge  L2"></a>Ridge  L2</h3><p>bia:difference between fit model and training point<br>variance：difference between fit model and testing point<br>the sum of squared residuals + lambda * Slope2（Ridge Regression Penalty） -&gt; 最小时决定slope<br>(relation between lambda and slope? lambda增slope减)<br>lambda is determined by cross validation（lambda,y-intercept,slope决定的variance最小）<br>几何图表示 <a target="_blank" rel="noopener" href="https://blog.51cto.com/u_9205406/5606772">https://blog.51cto.com/u_9205406/5606772</a></p>
+<h3 id="Lasso-L1-（把小效应QTL删掉"><a href="#Lasso-L1-（把小效应QTL删掉" class="headerlink" title="Lasso   L1 （把小效应QTL删掉"></a>Lasso   L1 （把小效应QTL删掉</h3><p>the sum of squared residuals + lambda * ｜Slope｜<br>slope can be 0</p>
+<h3 id="Elastic-net"><a href="#Elastic-net" class="headerlink" title="Elastic-net"></a>Elastic-net</h3><p>when parameters correlate<br>[300个y的解需要300个等式，即需要大样本的原因</p>
 <h3 id="glmnet-package"><a href="#glmnet-package" class="headerlink" title="glmnet package"></a>glmnet package</h3><p>Generalized Linear Models（Linear Regression + Logistic Regression）<br>lambda.1se results in a model with fewer parameters than lambada.min</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="punctuation">(</span>i <span class="keyword">in</span> <span class="number">0.10</span><span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">    fit.name <span class="operator">&lt;-</span> paste0<span class="punctuation">(</span><span class="string">&quot;alpha&quot;</span><span class="punctuation">,</span> i<span class="operator">/</span><span class="number">10</span><span class="punctuation">)</span></span><br><span class="line">    list.of.fits<span class="punctuation">[[</span>fit.name<span class="punctuation">]</span><span class="punctuation">]</span> <span class="operator">&lt;-</span></span><br><span class="line">        cv.glmnet<span class="punctuation">(</span>x.train<span class="punctuation">,</span> y.train<span class="punctuation">,</span> type.measure<span class="operator">=</span><span class="string">&quot;mse&quot;</span><span class="punctuation">,</span> alpha<span class="operator">=</span>i<span class="operator">/</span><span class="number">10</span><span class="punctuation">,</span></span><br><span class="line">            family<span class="operator">=</span><span class="string">&quot;gaussian&quot;</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span>    </span><br></pre></td></tr></table></figure>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="punctuation">(</span>i <span class="keyword">in</span> <span class="number">0</span><span class="operator">:</span><span class="number">10</span><span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">    fit.name <span class="operator">&lt;-</span> paste0<span class="punctuation">(</span><span class="string">&quot;alpha&quot;</span><span class="punctuation">,</span> i<span class="operator">/</span><span class="number">10</span><span class="punctuation">)</span></span><br><span class="line">    predicted <span class="operator">&lt;-</span></span><br><span class="line">        predict<span class="punctuation">(</span>list.of.fits<span class="punctuation">[[</span>fit.name<span class="punctuation">]</span>l<span class="punctuation">,</span></span><br><span class="line">            s<span class="operator">=</span>list.of.fits<span class="punctuation">[[</span>fit.name<span class="punctuation">]</span><span class="punctuation">]</span><span class="operator">$</span>lambda.ise<span class="punctuation">,</span> newx<span class="operator">=</span>x. test<span class="punctuation">)</span></span><br><span class="line">mse <span class="operator">&lt;-</span> mean<span class="punctuation">(</span><span class="punctuation">(</span>y.test <span class="operator">-</span> predicted<span class="punctuation">)</span><span class="operator">^</span><span class="number">2</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">temp <span class="operator">&lt;-</span> data. frame<span class="punctuation">(</span>alpha<span class="operator">=</span>i<span class="operator">/</span><span class="number">10</span><span class="punctuation">,</span> mse<span class="operator">-</span>mse<span class="punctuation">,</span> fit.name<span class="operator">=</span>fit.name<span class="punctuation">)</span> </span><br><span class="line">results <span class="operator">&lt;-</span> rbind<span class="punctuation">(</span>results<span class="punctuation">,</span> temp<span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="bayesian"><a href="#bayesian" class="headerlink" title="bayesian"></a>bayesian</h3><p>MLE: Logistics Regression<br>MAP: Regularized Logistics Regression<br>Bayesian: Bayesian Logistic Regression<br>MAP 可以看作是MLE加了正则项目。如果把先验设置成高斯分布那就等于加了L2正则，如果是拉普拉斯分布就是L1正则。<br>（遗传学假设：基因组上大部分位点对性状没贡献，所以bete是正态分布）</p>
+<p>MAP （maximum the posterior（权重） possibility)<br>multinomial guaussian distribution<br>                diagonal covariance<br>likelihood：parameters are given, output is random variable<br>posterior: data is given, parameters are random（distribution<br>            ridge MLE</p>
+<p>probabilistic models<br>supervised learning</p>
+
         
     </div>
     </div>
@@ -375,6 +379,98 @@ class="article article-type-post"
 
     
   
+    
+      <article
+id="post-prs"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2023/02/05/prs/">PRS</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>PGS are biomarkers, i.e., predictors of risk of diseases<br>PGS can be measured at any time during life (e.g., birth)<br>    • Remain the same thru life because DNA is the same<br>    • Update if GWAS discovery or PGS method change<br>PGS are not diagnostic genetic tests*<br>    • Genetic risk only account for part of risk<br>    • PGS only account for part of the genetic risk<br>    • PGS will improve in accuracy as WAS discovery sample size increase<br>For an individual the prediction of error of a PGS is high, but the set of individuals with high PGS is significantly enriched for those who go on to get disease*<br>    • Useful for risk stratification<br>PGS can be included in risk predictors that include other risk factors*<br>    • Most non-genetic risk factors change with age<br>People without family history of a common disease could have high PGS<br>    • PGS will vary between children of the same parents reflecting segregation variance<br>People with family history of a common disease may or may not have high PGS<br>    • PGS captures only part of the genetic contribution to risk and so the relationship between PGS and family history will vary between families<br>PGS can have clinical utility without knowledge of causal risk variants<br>Common causal risk variants are ancient and shared across <code>ancestries</code>, transferability of PGS is improved if causal variants are identified and selected for use in the PGS.</p>
+<h3 id="clinical-utility"><a href="#clinical-utility" class="headerlink" title="clinical utility"></a>clinical utility</h3><p>• Disease risk prediction<br>• Improving and refining diagnoses<br>• Slowing disease progression &amp; recurrence<br>• Improving population screening<br>• Prompting risk-reducing behaviours<br>• Improving cost and efficiency of trials</p>
+<h3 id="combine-monogenetic-with-polygenetic"><a href="#combine-monogenetic-with-polygenetic" class="headerlink" title="combine monogenetic with polygenetic"></a>combine monogenetic with polygenetic</h3><h3 id="risk-of-PRS"><a href="#risk-of-PRS" class="headerlink" title="risk of PRS"></a>risk of PRS</h3><p>• ‘False positive’ results<br>• Failure to convey uncertainty (false genetic determinism)<br>• Biases of representation (e.g. demographics)<br>• Healthcare professionals<br>• Communication of PGS results<br>• Psychosocial effects (e.g. anxiety, depression)<br>• Racists<br>• Embryo selection </p>
+<h3 id="age-specific-PRS-ancestry-specific-PRS"><a href="#age-specific-PRS-ancestry-specific-PRS" class="headerlink" title="age-specific PRS, ancestry-specific PRS"></a>age-specific PRS, ancestry-specific PRS</h3>
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2023-02-05T03:41:31.000Z" itemprop="datePublished">2023-02-05</time>
+</div>
+    
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-DataScience"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2023/04/12/DataScience/">DataScience</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/68307444">https://zhuanlan.zhihu.com/p/68307444</a><br>OUTLINE: RCT[试验] -&gt; Potential Outcome Framework(&#x2F;Structural Equation Modeling(适用于社会科学))[分析框架] -&gt; 置信区间理论&#x2F;Fisher exact test[分析方法]</p>
+<p>因果关系定义与潜在结果分析框架(Rubin因果模型)<br>该模型三要素：潜在结果(Potential Outcome)、个体处理稳定性假设(Stable Unit Treatment Value Assumption, SUTVA），并提到了分配机制(Assignment Mechanism)的重要性。</p>
+<p>观察到的偏差&#x3D;treatment effect + selected bias<br>随机对照试验(Randomized Controlled Trials, RCT)可以让选择偏差消失。</p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2023-04-12T08:43:08.000Z" itemprop="datePublished">2023-04-12</time>
+</div>
+    
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
 
   
     <nav class="pagination">
@@ -420,6 +516,14 @@ class="article article-type-post"
       <ul>
         
           <li>
+            <a href="/2023/04/12/DataScience/">DataScience</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/05/prs/">PRS</a>
+          </li>
+        
+          <li>
             <a href="/2023/01/16/article/">Article</a>
           </li>
         
@@ -429,14 +533,6 @@ class="article article-type-post"
         
           <li>
             <a href="/2023/01/02/LD-score-regression/">LD score regression</a>
-          </li>
-        
-          <li>
-            <a href="/2022/12/27/MR/">MR</a>
-          </li>
-        
-          <li>
-            <a href="/2022/12/10/gs/">gs</a>
           </li>
         
       </ul>
