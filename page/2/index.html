@@ -147,7 +147,7 @@
   
     
       <article
-id="post-cluster-analysis"
+id="post-imputation"
 class="article article-type-post"
 >
 
@@ -158,22 +158,12 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2022/11/19/cluster-analysis/">cluster-analysis</a>
+        <a href="/2022/12/09/imputation/">imputation</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <span id="more"></span>
-
-
-<p>为了探究表达基因在组织间的保守性和多样性，挖掘组织间不同生态型表达的保守性和多样性，我们对玉米关联群体中298个生态型在7个组织中的表达矩阵进行聚类分析。为了避免低表达基因或未表达基因对结果造成的影响，我们在每个组织中筛选相同的100个个体和5000个基因表达量用于后续分析。为了避免不同组织以及基因表达差异的影响，我们首先使用z-score公式（公式2.2）对每个基因在不同个体中的表达数据进行归一化，随后使用处理过的表达量信息计算两两样本间的欧式距离，然后利用欧式距离实现样本的聚类。</p>
-<p>我们使用R语言的gplot包中的heatmap.2函数进行聚类分析(Warnes et al., 2015)。</p>
-<h3 id="Kmeans"><a href="#Kmeans" class="headerlink" title="Kmeans"></a>Kmeans</h3><h3 id="层次聚类（树状图）（Hierarchical-Agglomerative-Clustering-HAC）"><a href="#层次聚类（树状图）（Hierarchical-Agglomerative-Clustering-HAC）" class="headerlink" title="层次聚类（树状图）（Hierarchical Agglomerative Clustering,HAC）"></a>层次聚类（树状图）（Hierarchical Agglomerative Clustering,HAC）</h3><ol>
-<li>计算变量间的相异度<br>欧式距离：计算数据集中每个观测值之间的相异度</li>
-<li>融合成簇<br>计算簇之间的距离：<br>完全连接聚类<br>ward最小方差法</li>
-</ol>
-<p>R package：fossil<br>euclidean</p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/50cb85285af0">https://www.jianshu.com/p/50cb85285af0</a></p>
-<h3 id="PCA"><a href="#PCA" class="headerlink" title="PCA"></a>PCA</h3><h3 id="tSNE"><a href="#tSNE" class="headerlink" title="tSNE"></a>tSNE</h3><h3 id="UMAP"><a href="#UMAP" class="headerlink" title="UMAP"></a>UMAP</h3><p><a target="_blank" rel="noopener" href="https://www.bioinformatics.babraham.ac.uk/training/10XRNASeq/Dimension%20Reduction.pdf">https://www.bioinformatics.babraham.ac.uk/training/10XRNASeq/Dimension%20Reduction.pdf</a></p>
+        <p>填充群体<br>call snp</p>
+<p>phase:<br>reference panel<br>trios</p>
 
         
     </div>
@@ -189,233 +179,7 @@ class="article article-type-post"
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2022-11-19T07:01:13.000Z" itemprop="datePublished">2022-11-19</time>
-</div>
-    
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-WGCNA"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2022/11/19/WGCNA/">WGCNA</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <span id="more"></span>
-
-
-<p>为了探究组织间的共表达网络的保守性和多样性，我们进行了加权共表达网络的构建。本部分使用R语言的<a href=""></a><a href="">WGCNA</a>包进行分析(Langfelder and<br>Horvath, 2008)。</p>
-<p>首先我们进行数据整理，在每个组织中随机选取2000个表达基因，通过“goodSamplesGenes”函数检验缺失值并对缺失值处理，随后通过样本聚类分析剔除离群样本，从而减少样本因素导致的误差。</p>
-<p>其次，我们对样本进行了层次聚类，进一步使用bicor相关系数进行基因间的表达相关系数的计算，后选取拟合曲线第一次接近0.9时的软阈值参数，将基因分类构成基因共表达模块，并验证共表达网络是否符合无尺度网络，即出现连接度为k的节点的对数log（k）与该节点出现的概率的对数log（P（k））要负相关，且相关系数要大于0.85。本研究通过“pickSoftThreshold”函数进行筛选最佳软阈值筛选。</p>
-<p>(SoftThreshold)</p>
-<p>再次，我们将表达矩阵转换成邻接矩阵，然后再将邻接矩阵转换成拓扑矩阵（TOM），基于TOM，我们使用average-linkage层次聚类法对基因进行聚类，按照混合动态剪切法在确定基因模块后，我们依次计算每个模块的特征向量值（eigengenes），然后对模块进行聚类分析，将距离较近的模块合并成新的模块，本部分使用“blockwiseModules”函数进行分析，设置mergeCutHeight &#x3D;0.1、deepSplit&#x3D;2、minModuleSize&#x3D;30、pamStage&#x3D;F。</p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2022-11-19T07:02:50.000Z" itemprop="datePublished">2022-11-19</time>
-</div>
-    
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-pick-p"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2022/11/19/pick-p/">how to pick &#39;p threshold&#39;？</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <p>how to pick ‘p threshold’？</p>
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2022-11-19T07:59:13.000Z" itemprop="datePublished">2022-11-19</time>
-</div>
-    
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-conditional-analysis"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2022/11/19/conditional-analysis/">conditional-analysis</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <p><strong>精细定位</strong><br>通常情况下GWAS或是meta分析检验的是基于单个SNP模型的相关，所估计的效应量为被检验SNP的边际效应，但相比于多SNP模型的联合效应，单个SNP模型的边际效应并没有考虑该SNP与周围SNP的LD。</p>
-<p>这会带来两个问题：</p>
-<p>如果两个SNP成负相关，那么这两个SNP的效应都会被减弱。<br>如果两个SNP都达到了显著的阈值，事后很难通过LD来确定这两个SNP的相关的程度。</p>
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2022-11-19T08:02:20.000Z" itemprop="datePublished">2022-11-19</time>
-</div>
-    
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-deg"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2022/11/20/deg/">deg</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <p>DEG principle</p>
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2022-11-20T04:21:37.000Z" itemprop="datePublished">2022-11-20</time>
-</div>
-    
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-ggplot"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2022/11/25/ggplot/">ggplot</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <p><a target="_blank" rel="noopener" href="https://pic1.zhimg.com/v2-79861cc609746d413ad10ce70350bf20_r.jpg">https://pic1.zhimg.com/v2-79861cc609746d413ad10ce70350bf20_r.jpg</a><br>配色 ggsci</p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2022-11-25T15:51:52.000Z" itemprop="datePublished">2022-11-25</time>
+  <time datetime="2022-12-09T07:29:25.000Z" itemprop="datePublished">2022-12-09</time>
 </div>
     
     
@@ -487,7 +251,7 @@ class="article article-type-post"
   
     
       <article
-id="post-imputation"
+id="post-ggplot"
 class="article article-type-post"
 >
 
@@ -498,12 +262,11 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2022/12/09/imputation/">imputation</a>
+        <a href="/2022/11/25/ggplot/">ggplot</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <p>填充群体<br>call snp</p>
-<p>phase:<br>reference panel<br>trios</p>
+        <p><a target="_blank" rel="noopener" href="https://pic1.zhimg.com/v2-79861cc609746d413ad10ce70350bf20_r.jpg">https://pic1.zhimg.com/v2-79861cc609746d413ad10ce70350bf20_r.jpg</a><br>配色 ggsci</p>
 
         
     </div>
@@ -519,7 +282,7 @@ class="article article-type-post"
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2022-12-09T07:29:25.000Z" itemprop="datePublished">2022-12-09</time>
+  <time datetime="2022-11-25T15:51:52.000Z" itemprop="datePublished">2022-11-25</time>
 </div>
     
     
@@ -532,7 +295,7 @@ class="article article-type-post"
   
     
       <article
-id="post-gs"
+id="post-deg"
 class="article article-type-post"
 >
 
@@ -543,31 +306,11 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2022/12/10/gs/">gs</a>
+        <a href="/2022/11/20/deg/">deg</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <p>提高GS准确性：</p>
-<ol>
-<li>基因型：加入功能性marker</li>
-<li>trait：多性状模型；选择指数</li>
-<li>G x E </li>
-<li>多组学数据</li>
-<li>群体：增加训练群体；训练群体和预测群体之间的亲缘关系。</li>
-</ol>
-<p>note：选择指数（指数辅助）：选定某一目标性状，选择指数SI<br>选择指数与性状之间的遗传决定系数；<br>多性状和选择指数的区别</p>
-<p>预测精度：育种值<br>预测能力：表型值</p>
-<p>育种值和表型值的关系：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zjguilai/article/details/90707052">https://blog.csdn.net/zjguilai/article/details/90707052</a></p>
-<p>性状和方法间的互作 F-test</p>
-<p>基于GWAS获得p值小的snp进行GS</p>
-<p>22.12.10<br>SNPBLUP ：每个snp（rrBLUP）<br>GBLUP：kinship G矩阵IBS snp的和<br>IBS怎么矫正群体结构（可能把主效基因矫正没了,即假阴性)<br>IBS怎么做GS</p>
-<p>有的群体结构为什么IBS矫正不掉：marker密度不同 分布不均匀，重组不均一，理想情况下一个重组一个marker；frequency是偏的；原假设是极少数相关，但现实遗传力高，比如20%的marker都与性状相关。</p>
-<p>PCA用IBS和每个snp的区别，解释的pc1 IBS版低。</p>
-<p>最小二乘法<br>最大似然法<br>贝叶斯<br>modeling computering</p>
-<p>rrBLUP<br>统计基础：linear algerbra<br>概率与似然<br>最小二乘法<br>极大似然<br>最小二乘法与极大似然区别联系<br>回归的正则化<br>    Ridge<br>    Lasso<br>    Elasticnet<br>Bayes回归<br>(即解y&#x3D;ax+b)</p>
-<p>zhihu.com&#x2F;p&#x2F;72370235</p>
-<p>如何解混合线性模型</p>
-
+        <p>DEG principle</p>
         
     </div>
     </div>
@@ -582,7 +325,7 @@ class="article article-type-post"
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2022-12-10T08:06:13.000Z" itemprop="datePublished">2022-12-10</time>
+  <time datetime="2022-11-20T04:21:37.000Z" itemprop="datePublished">2022-11-20</time>
 </div>
     
     
@@ -595,7 +338,7 @@ class="article article-type-post"
   
     
       <article
-id="post-MR"
+id="post-conditional-analysis"
 class="article article-type-post"
 >
 
@@ -606,35 +349,106 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2022/12/27/MR/">MR</a>
+        <a href="/2022/11/19/conditional-analysis/">conditional-analysis</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <h3 id="why-MR"><a href="#why-MR" class="headerlink" title="why MR:"></a>why MR:</h3><p>混杂因素confounding会影响outcom -&gt; radomisation method but immoral -&gt; MR<br>MR comes from Mendel’s Laws(segregation:randomly inheritance;independent assortment:no LD)<br>(当使用TWAS 混杂因素影响怎么去掉？)<br>3 MR core assumptions:</p>
-<ol>
-<li>SNP unrelates to confounders(in most case it is true. prove it by analyse one confounder with snp) </li>
-<li>population stratifation</li>
-<li>no horizontal pleiotropy （identify by sensitivity test）</li>
-</ol>
-<h3 id="method-and-differences"><a href="#method-and-differences" class="headerlink" title="method and differences"></a>method and differences</h3><p>causal effect by Wald Estimator</p>
-<h3 id="Limitation-to-MR："><a href="#Limitation-to-MR：" class="headerlink" title="Limitation to MR："></a>Limitation to MR：</h3><ol>
-<li>population stratification</li>
-<li>Canalisation (‘Dvelopmental compensation’)</li>
-<li>the existence of instruments</li>
-<li>Power (snp explain small phenotypic vatiance;require large sample size)and weak instrument(snp are weak proxies for exposure;results in biased causality) -&gt; using multiple snp as IV(allelic scores)[Palmer TM, Lawlor DA, Harbord RM, Sheehan NA, Tobias JH, Timpson NJ, Davey Smith G, Sterne JA. Using multiple genetic variants as instrumental variables for modifiable risk factors. Stat Methods Med Res. 2012 Jun;21(3):223-42. doi: 10.1177&#x2F;0962280210394459. Epub 2011 Jan 7. PMID: 21216802; PMCID: PMC3917707.]</li>
-</ol>
-<p><a target="_blank" rel="noopener" href="https://www.mendelianrandomization.com/index.php/what-is-mr">https://www.mendelianrandomization.com/index.php/what-is-mr</a><br>Reasons of false negative:<br>Horizontal pleiotropic (水平多效性) 会影响IVW和SMR结果。即如果存在多个协变量和&#x2F;或遗传变量，则任何假设检验方法都需要考虑每个协变量的多重比较，这也导致我们检测真正因果关联的效力下降（假阴性率升高）。<br>如果与1个暴露关联的10个工具变量没有全部证明与结果有关，即有可能具有多效性。</p>
-<p>因此，在MR分析中，有几点问题需要注意：（1）弱工具变量问题：MR方法的检验效能高低与工具变量与暴露因素之间的关联强度密切相关，弱工具变量会导致结果出现偏差；（2）多效性问题：当工具变量存在多效性问题，其因果推断的结论解释需谨慎，需要采用不同的方法进行分析，以期得到稳健的结果；（3）把握度低问题：MR分析往往需要大样本数据才能达到足够的把握度，可整合公共数据库中基于大样本的汇总数据进行因果推断；（4）设计所带来的混杂问题：在病例-对照研究中，由于其设计本身会引入一些混杂，导致工具变量与混杂之间的独立性假设不成立，对于此类数据的MR分析需要寻求合适的解决策略；<br>**（5）效应值方向问题：两阶段MR分析中，需要确保工具变量-暴露以及工具变量-结局关联分析中效应等位基因（effect allele）是一致的；<br>（6）人群异质性问题：两阶段MR分析中，需保证工具变量-暴露以及工具变量-结局关联分析汇总是来自于同质的人群，或校正过人群结构，否则会导致估计有偏。<br>Beavis效应</p>
-<h4 id="Deal-with-pleiotropy-Heterogeneity"><a href="#Deal-with-pleiotropy-Heterogeneity" class="headerlink" title="Deal with pleiotropy - Heterogeneity"></a>Deal with pleiotropy - Heterogeneity</h4><p>Q test</p>
-<ol>
-<li>remove outliers:MR presso, HEIDI test( HEIDI (heterogeneity in dependent instruments), using multiple SNPs in a cis-eQTL region to distinguish pleiotropy from linkage)</li>
-<li>Multivariable MR</li>
-<li>Fit a model that is robust to some model of horizontal pleiotropy</li>
-</ol>
-<h3 id="Methods-of-MR"><a href="#Methods-of-MR" class="headerlink" title="Methods of MR"></a>Methods of MR</h3><p>IVW and Weighted linear regression(can’t use in pleiotropy)<br>MR Egger(InSIDE Assumption: no correlation between QTL and eQTL effect)</p>
-<p>two samples MR：<br>note:the issue of strand(回文变体，change the direction of effect size )</p>
-<p><a target="_blank" rel="noopener" href="http://html.rhhz.net/zhlxbx/20200813.htm">http://html.rhhz.net/zhlxbx/20200813.htm</a><br>MR analysis or colocalization analysis</p>
-<p>？TWAS定位到的gene-trait关系但并不能MR显著是否因为工具变量选择的问题？<br>工具变量对暴露和结果之间关系的影响？<br>TWAS和eQTL结合时 是否因为GWAS的p值可靠性差 真实情况是有effect size的</p>
+        <p><strong>精细定位</strong><br>通常情况下GWAS或是meta分析检验的是基于单个SNP模型的相关，所估计的效应量为被检验SNP的边际效应，但相比于多SNP模型的联合效应，单个SNP模型的边际效应并没有考虑该SNP与周围SNP的LD。</p>
+<p>这会带来两个问题：</p>
+<p>如果两个SNP成负相关，那么这两个SNP的效应都会被减弱。<br>如果两个SNP都达到了显著的阈值，事后很难通过LD来确定这两个SNP的相关的程度。</p>
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2022-11-19T08:02:20.000Z" itemprop="datePublished">2022-11-19</time>
+</div>
+    
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-pick-p"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2022/11/19/pick-p/">how to pick &#39;p threshold&#39;？</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>how to pick ‘p threshold’？</p>
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2022-11-19T07:59:13.000Z" itemprop="datePublished">2022-11-19</time>
+</div>
+    
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-WGCNA"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2022/11/19/WGCNA/">WGCNA</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <span id="more"></span>
+
+
+<p>为了探究组织间的共表达网络的保守性和多样性，我们进行了加权共表达网络的构建。本部分使用R语言的<a href=""></a><a href="">WGCNA</a>包进行分析(Langfelder and<br>Horvath, 2008)。</p>
+<p>首先我们进行数据整理，在每个组织中随机选取2000个表达基因，通过“goodSamplesGenes”函数检验缺失值并对缺失值处理，随后通过样本聚类分析剔除离群样本，从而减少样本因素导致的误差。</p>
+<p>其次，我们对样本进行了层次聚类，进一步使用bicor相关系数进行基因间的表达相关系数的计算，后选取拟合曲线第一次接近0.9时的软阈值参数，将基因分类构成基因共表达模块，并验证共表达网络是否符合无尺度网络，即出现连接度为k的节点的对数log（k）与该节点出现的概率的对数log（P（k））要负相关，且相关系数要大于0.85。本研究通过“pickSoftThreshold”函数进行筛选最佳软阈值筛选。</p>
+<p>(SoftThreshold)</p>
+<p>再次，我们将表达矩阵转换成邻接矩阵，然后再将邻接矩阵转换成拓扑矩阵（TOM），基于TOM，我们使用average-linkage层次聚类法对基因进行聚类，按照混合动态剪切法在确定基因模块后，我们依次计算每个模块的特征向量值（eigengenes），然后对模块进行聚类分析，将距离较近的模块合并成新的模块，本部分使用“blockwiseModules”函数进行分析，设置mergeCutHeight &#x3D;0.1、deepSplit&#x3D;2、minModuleSize&#x3D;30、pamStage&#x3D;F。</p>
 
         
     </div>
@@ -650,7 +464,164 @@ class="article article-type-post"
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2022-12-27T03:14:16.000Z" itemprop="datePublished">2022-12-27</time>
+  <time datetime="2022-11-19T07:02:50.000Z" itemprop="datePublished">2022-11-19</time>
+</div>
+    
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-cluster-analysis"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2022/11/19/cluster-analysis/">cluster-analysis</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <span id="more"></span>
+
+
+<p>为了探究表达基因在组织间的保守性和多样性，挖掘组织间不同生态型表达的保守性和多样性，我们对玉米关联群体中298个生态型在7个组织中的表达矩阵进行聚类分析。为了避免低表达基因或未表达基因对结果造成的影响，我们在每个组织中筛选相同的100个个体和5000个基因表达量用于后续分析。为了避免不同组织以及基因表达差异的影响，我们首先使用z-score公式（公式2.2）对每个基因在不同个体中的表达数据进行归一化，随后使用处理过的表达量信息计算两两样本间的欧式距离，然后利用欧式距离实现样本的聚类。</p>
+<p>我们使用R语言的gplot包中的heatmap.2函数进行聚类分析(Warnes et al., 2015)。</p>
+<h3 id="Kmeans"><a href="#Kmeans" class="headerlink" title="Kmeans"></a>Kmeans</h3><h3 id="层次聚类（树状图）（Hierarchical-Agglomerative-Clustering-HAC）"><a href="#层次聚类（树状图）（Hierarchical-Agglomerative-Clustering-HAC）" class="headerlink" title="层次聚类（树状图）（Hierarchical Agglomerative Clustering,HAC）"></a>层次聚类（树状图）（Hierarchical Agglomerative Clustering,HAC）</h3><ol>
+<li>计算变量间的相异度<br>欧式距离：计算数据集中每个观测值之间的相异度</li>
+<li>融合成簇<br>计算簇之间的距离：<br>完全连接聚类<br>ward最小方差法</li>
+</ol>
+<p>R package：fossil<br>euclidean</p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/50cb85285af0">https://www.jianshu.com/p/50cb85285af0</a></p>
+<h3 id="PCA"><a href="#PCA" class="headerlink" title="PCA"></a>PCA</h3><h3 id="tSNE"><a href="#tSNE" class="headerlink" title="tSNE"></a>tSNE</h3><h3 id="UMAP"><a href="#UMAP" class="headerlink" title="UMAP"></a>UMAP</h3><p><a target="_blank" rel="noopener" href="https://www.bioinformatics.babraham.ac.uk/training/10XRNASeq/Dimension%20Reduction.pdf">https://www.bioinformatics.babraham.ac.uk/training/10XRNASeq/Dimension%20Reduction.pdf</a></p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2022-11-19T07:01:13.000Z" itemprop="datePublished">2022-11-19</time>
+</div>
+    
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-Phylogenetic-tree"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2022/11/19/Phylogenetic-tree/">Phylogenetic-tree</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <span id="more"></span>
+
+
+<p>Wright-Fisher模型：从前向后或由过去推测现在的基因谱系研究方法。</p>
+<p>基因融合模型</p>
+<p>Bootstrap value</p>
+<h5 id="model"><a href="#model" class="headerlink" title="model"></a>model</h5><p>矩阵法：近邻结合法 neighbor-joining (NJ)</p>
+<p>简约法：最大简约法 maximum parsimony (MP)</p>
+<p>最大似然法：最大似然估计 maximum likelihood (ML)</p>
+<p>后验概率法：贝叶斯法 Bayesian</p>
+<h5 id="tools"><a href="#tools" class="headerlink" title="tools"></a>tools</h5><p>MEGA-X </p>
+<p>BEAST2 (Bayesian):<a target="_blank" rel="noopener" href="https://github.com/CompEvol/beast2.git">https://github.com/CompEvol/beast2.git</a></p>
+<p>MrBayes:<a target="_blank" rel="noopener" href="http://mrbayes.csit.fsu.edu/index.php">http://mrbayes.csit.fsu.edu/index.php</a></p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2022-11-19T06:34:32.000Z" itemprop="datePublished">2022-11-19</time>
+</div>
+    
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-gwas-model"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2022/11/19/gwas-model/">gwas-model</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>Q（群体结构）+K（亲缘关系）模型</p>
+<p>FASTA（why “permutation procedures can not be applied to estimate genome-wide significance, because the data structure is not exchangeable.”）<br>GRAMMAR（Amin et al, 2007）</p>
+<p>EIGENSTRAT（GenABEL qtscore）</p>
+<p><strong>FASTA（GenABEL mmscore）</strong></p>
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2022-11-19T05:10:09.000Z" itemprop="datePublished">2022-11-19</time>
 </div>
     
     

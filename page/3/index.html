@@ -147,7 +147,7 @@
   
     
       <article
-id="post-LD-score-regression"
+id="post-heritability"
 class="article article-type-post"
 >
 
@@ -158,18 +158,11 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2023/01/02/LD-score-regression/">LD score regression</a>
+        <a href="/2022/11/18/heritability/">heritability</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <p>LD四大功能：estimating LD Scores, h2 and partitioned h2, genetic correlation, the LD Score regression intercept。</p>
-<p>计算LD分数、性状的遗传度、性状间的遗传相关性及遗传协方差，分割遗传度，细胞类型特异性分析等</p>
-<h3 id="Linkage-disequilibrium-score-regression（LDSC）"><a href="#Linkage-disequilibrium-score-regression（LDSC）" class="headerlink" title="Linkage disequilibrium score regression（LDSC）"></a>Linkage disequilibrium score regression（LDSC）</h3><p><a target="_blank" rel="noopener" href="https://www.nature.com/articles/ng.3211">https://www.nature.com/articles/ng.3211</a></p>
-<ol>
-<li>判断GWAS结果中是否存在混淆因素。</li>
-<li>评估遗传力大小。<br>计算两种性状的遗传相关性。</li>
-</ol>
-
+        <p><strong>遗传力（Heritability</strong> ）是我们理解遗传与环境因素对性状影响的基础，定义为 <strong>遗传方差占性状方差（总方差）的比值</strong> ，可以理解为遗传因素对性状的影响，数学上以<strong>h2</strong>表示。</p>
         
     </div>
     </div>
@@ -184,7 +177,7 @@ class="article article-type-post"
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2023-01-02T15:21:51.000Z" itemprop="datePublished">2023-01-02</time>
+  <time datetime="2022-11-18T16:59:01.000Z" itemprop="datePublished">2022-11-18</time>
 </div>
     
     
@@ -197,7 +190,7 @@ class="article article-type-post"
   
     
       <article
-id="post-Statictics"
+id="post-independence-test"
 class="article article-type-post"
 >
 
@@ -208,143 +201,39 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2023/01/11/Statictics/">Statictics</a>
+        <a href="/2022/11/18/independence-test/">independence-test</a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <h2 id="Linear-algebra"><a href="#Linear-algebra" class="headerlink" title="Linear algebra"></a>Linear algebra</h2><p>determinant<br>Eigenvalues and Eigenvectors<br>Summary To solve the eigenvalue problem for an n by n matrix, follow these steps:</p>
-<ol>
-<li>Compute the determinant of A - I. With I subtracted along the diagonal, this determinant starts with 1” or -X”. It is a polynomial in 1 of degree n.</li>
-<li>Find the roots of this polynomial, by solving det(A - 21) &#x3D; 0. The n roots are<br>the n eigenvalues of A. They make A - 11 singular.</li>
-<li>For each eigenvalue 1, solve (A - 1.1 )x &#x3D; 0 to find an eigenvector x.</li>
-</ol>
-<h2 id="Likehood-and-probability"><a href="#Likehood-and-probability" class="headerlink" title="Likehood and probability"></a>Likehood and probability</h2><p>e&#x3D;y-ax-b<br>maxlikelihood：假设1.e独立<br>                  2.e残差的分布服从同分布<br>                  3.e同标准差</p>
-<p>如果e的标准差不相同，可以用加权最小二乘法。<br>csdn<br>马同学图解数学</p>
-<h2 id="regularization-Regression-boosting-bagging-radom-forest"><a href="#regularization-Regression-boosting-bagging-radom-forest" class="headerlink" title="regularization Regression(boosting,bagging:radom forest)"></a>regularization Regression(boosting,bagging:radom forest)</h2><p>slope推导 <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzIxNjA2ODUzNg==&mid=2651435962&idx=1&sn=c0e4ef18f746fef7eb1a7c89c6cbb83e&chksm=8c73ab6dbb04227bca9a2c396fe45f3a7bdbd98bdb2493f983062393032d4310fed1aa5149a6&scene=21#wechat_redirect">link</a></p>
-<h3 id="Ridge-L2"><a href="#Ridge-L2" class="headerlink" title="Ridge  L2"></a>Ridge  L2</h3><p>bia:difference between fit model and training point<br>variance：difference between fit model and testing point<br>the sum of squared residuals + lambda * Slope2（Ridge Regression Penalty） -&gt; 最小时决定slope<br>(relation between lambda and slope? lambda增slope减)<br>lambda is determined by cross validation（lambda,y-intercept,slope决定的variance最小）<br>几何图表示 <a target="_blank" rel="noopener" href="https://blog.51cto.com/u_9205406/5606772">https://blog.51cto.com/u_9205406/5606772</a></p>
-<h3 id="Lasso-L1-（把小效应QTL删掉"><a href="#Lasso-L1-（把小效应QTL删掉" class="headerlink" title="Lasso   L1 （把小效应QTL删掉"></a>Lasso   L1 （把小效应QTL删掉</h3><p>the sum of squared residuals + lambda * ｜Slope｜<br>slope can be 0</p>
-<h3 id="Elastic-net"><a href="#Elastic-net" class="headerlink" title="Elastic-net"></a>Elastic-net</h3><p>when parameters correlate<br>[300个y的解需要300个等式，即需要大样本的原因</p>
-<h3 id="glmnet-package"><a href="#glmnet-package" class="headerlink" title="glmnet package"></a>glmnet package</h3><p>Generalized Linear Models（Linear Regression + Logistic Regression）<br>lambda.1se results in a model with fewer parameters than lambada.min</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="punctuation">(</span>i <span class="keyword">in</span> <span class="number">0.10</span><span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">    fit.name <span class="operator">&lt;-</span> paste0<span class="punctuation">(</span><span class="string">&quot;alpha&quot;</span><span class="punctuation">,</span> i<span class="operator">/</span><span class="number">10</span><span class="punctuation">)</span></span><br><span class="line">    list.of.fits<span class="punctuation">[[</span>fit.name<span class="punctuation">]</span><span class="punctuation">]</span> <span class="operator">&lt;-</span></span><br><span class="line">        cv.glmnet<span class="punctuation">(</span>x.train<span class="punctuation">,</span> y.train<span class="punctuation">,</span> type.measure<span class="operator">=</span><span class="string">&quot;mse&quot;</span><span class="punctuation">,</span> alpha<span class="operator">=</span>i<span class="operator">/</span><span class="number">10</span><span class="punctuation">,</span></span><br><span class="line">            family<span class="operator">=</span><span class="string">&quot;gaussian&quot;</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span>    </span><br></pre></td></tr></table></figure>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="punctuation">(</span>i <span class="keyword">in</span> <span class="number">0</span><span class="operator">:</span><span class="number">10</span><span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">    fit.name <span class="operator">&lt;-</span> paste0<span class="punctuation">(</span><span class="string">&quot;alpha&quot;</span><span class="punctuation">,</span> i<span class="operator">/</span><span class="number">10</span><span class="punctuation">)</span></span><br><span class="line">    predicted <span class="operator">&lt;-</span></span><br><span class="line">        predict<span class="punctuation">(</span>list.of.fits<span class="punctuation">[[</span>fit.name<span class="punctuation">]</span>l<span class="punctuation">,</span></span><br><span class="line">            s<span class="operator">=</span>list.of.fits<span class="punctuation">[[</span>fit.name<span class="punctuation">]</span><span class="punctuation">]</span><span class="operator">$</span>lambda.ise<span class="punctuation">,</span> newx<span class="operator">=</span>x. test<span class="punctuation">)</span></span><br><span class="line">mse <span class="operator">&lt;-</span> mean<span class="punctuation">(</span><span class="punctuation">(</span>y.test <span class="operator">-</span> predicted<span class="punctuation">)</span><span class="operator">^</span><span class="number">2</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">temp <span class="operator">&lt;-</span> data. frame<span class="punctuation">(</span>alpha<span class="operator">=</span>i<span class="operator">/</span><span class="number">10</span><span class="punctuation">,</span> mse<span class="operator">-</span>mse<span class="punctuation">,</span> fit.name<span class="operator">=</span>fit.name<span class="punctuation">)</span> </span><br><span class="line">results <span class="operator">&lt;-</span> rbind<span class="punctuation">(</span>results<span class="punctuation">,</span> temp<span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<h3 id="bayesian"><a href="#bayesian" class="headerlink" title="bayesian"></a>bayesian</h3><p>MLE: Logistics Regression<br>MAP: Regularized Logistics Regression<br>Bayesian: Bayesian Logistic Regression<br>MAP 可以看作是MLE加了正则项目。如果把先验设置成高斯分布那就等于加了L2正则，如果是拉普拉斯分布就是L1正则。<br>（遗传学假设：基因组上大部分位点对性状没贡献，所以bete是正态分布）</p>
-<p>MAP （maximum the posterior（权重） possibility)<br>multinomial guaussian distribution<br>                diagonal covariance<br>likelihood：parameters are given, output is random variable<br>posterior: data is given, parameters are random（distribution<br>            ridge MLE</p>
-<p>probabilistic models<br>supervised learning</p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2023-01-11T03:41:41.000Z" itemprop="datePublished">2023-01-11</time>
-</div>
-    
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-article"
-class="article article-type-post"
->
+        <span id="more"></span>
 
 
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2023/01/16/article/">Article</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <h1 id="Comprehensive-analyses-of-1771-transcriptomes-cross-7-tissues-enhance-genetic-and-biological-interpretations-for-complex-traits-in-maize"><a href="#Comprehensive-analyses-of-1771-transcriptomes-cross-7-tissues-enhance-genetic-and-biological-interpretations-for-complex-traits-in-maize" class="headerlink" title="Comprehensive analyses of 1771 transcriptomes cross 7 tissues enhance genetic and biological interpretations for complex traits in maize"></a>Comprehensive analyses of 1771 transcriptomes cross 7 tissues enhance genetic and biological interpretations for complex traits in maize</h1><h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>By analyzing 1771 RNA-seq data from 7 tissues sampled from 298 genotypes, we studied the tissue expression specificity and built a comprehensive multi-tissue gene regulation atlas in maize. We describe the landscape of the transcriptome variation and identify thousands of alleles associations with gene expression in 7 tissues. The tissue-sharing patterns of these genetic regulatory effects is consistence with phenotypic correlation, highlighted a general contribution from tissue specific regulatory variation to across tissue transcriptomes variation. Using transcriptome-wide association study (TWAS), we linked gene expression variation in different tissues to agronomic traits variation, revealing tissue-specific expression contribution to traits. In addition, through integrative analyses of tissue-specific gene regulation variation with genome-wide association studies, we detected relevant tissue types and candidate genes for agronomic traits to elucidate the genetic mechanisms underpinning such agronomic traits in maize. Our findings provided novel insights into the genetic and biological mechanisms underlying complex traits in maize, and our transcriptome atlas can serve as a primary source for biological interpretation, functional validation, and genomic improvement in plants.</p>
-<h3 id="Expression-diversity-across-7-tissues-in-maize-diversity-panel"><a href="#Expression-diversity-across-7-tissues-in-maize-diversity-panel" class="headerlink" title="Expression diversity across 7 tissues in maize diversity panel"></a>Expression diversity across 7 tissues in maize diversity panel</h3><p> <img src="/2023/01/16/article/fig1.jpg" alt="fig1"><br>Figure 1. Characteristics of 298 maize samples and expression diversity of 7 tissues. (A) 7 tissues were analyzed. (B) Principal component analysis of 4,260,521SNPs based samples from 6 groups. (C) The UMAP of 7 tissues based on the expression of 15505 genes across samples. (D) The genes that are expressed in 7 tissues overlap. (E) The gene type distribution in each tissue.</p>
-<h3 id="Tissue-specific-genetic-regulation-of-expression-diversity"><a href="#Tissue-specific-genetic-regulation-of-expression-diversity" class="headerlink" title="Tissue- specific genetic regulation of expression diversity"></a>Tissue- specific genetic regulation of expression diversity</h3><p> <img src="/2023/01/16/article/fig2.jpg" alt="fig2"><br>Figure 2. Summary of the eGWAS results. (A) A genome-wide map of eQTLs in 6 tissues. The x-axis shows the location of the eQTLs, while the y-axis shows the position of the associated gene. Points along the diagonal are cis-eQTLs (those mapping to nearby genes). (B) The number of eQTLs associated with one gene in each of 6 tissues. (C) Tissue clustering with pairwise Pearson correlation of eQTL effect sizes. Tissues are grouped by hierarchical clustering. (D) The number of eGenes. (Left) The number of genes with different kinds of eQTL among all genes tested. (Middle) Of the 4239 eGenes mapped in 1 tissue, 3902 were found to be associated with cis-eQTL, indicating a highly significant enrichment. Right Hits that were mapped in multiple tissues were more likely to associate cis-eQTL. (E) The number of eQTLs. (F) The number of cis and trans eQTLs that have been identified in each tissue. (G) The eQTL effects of similar eGene in RT and LT. Triangle symbols represent the top eQTL of GRMZM2G057075.</p>
-<h3 id="Tissue-expression-diversity-contributes-to-trait-diversity"><a href="#Tissue-expression-diversity-contributes-to-trait-diversity" class="headerlink" title="Tissue expression diversity contributes to trait diversity"></a>Tissue expression diversity contributes to trait diversity</h3><p> <img src="/2023/01/16/article/fig3.jpg" alt="fig3"><br>Figure 3. Tissue diversity contributes to trait diversity. (A) The phenotypic variance explained (PVE) by gene expression in 7 tissues (B) Gene associated with agronomic traits in 6 tissues. Each square’s color represents the gene’s P value. (C)  and (E) Expression-to-trait correlation maps for AC207722.2_FG009, highlighting gene expression highly positive correlation with GDD_DTA, GDD_DTS and, EH in LD.</p>
-<h3 id="Tissue-specific-eQTL-effects-on-agronomic-traits"><a href="#Tissue-specific-eQTL-effects-on-agronomic-traits" class="headerlink" title="Tissue-specific eQTL effects on agronomic traits"></a>Tissue-specific eQTL effects on agronomic traits</h3><p> <img src="/2023/01/16/article/fig4.jpg" alt="fig4"><br>Figure 4. Summary of QTL S1_86775549 associated with α-Carotene&#x2F;Zeinoxanthin and GRMZM2G143202. (A) Manhattan plots from top to bottom are GRMZM2G143202 in RT, GRMZM2G143202 in LD, and α-Carotene&#x2F;Zeinoxanthin. The position of S1_86775549 was highlighted, illustrating a tissue-specific association. (B) and (C) Gene expression-to-phenotype maps. GRMZM2G143202 expression in LD was highly positively correlated with α-Carotene&#x2F;Zeinoxanthin, whereas gene expression in RT was not significantly correlated with the trait. (D) and(E) Genotype-to-phenotype maps. The phenotype (GRMZM2G143202 and α-Carotene&#x2F;Zeinoxanthin) comparison between two alleles of S1_86775549. P-values were obtained by GWAS.</p>
-<h3 id="Identification-of-the-potential-tissue-specific-regulation-mechanism"><a href="#Identification-of-the-potential-tissue-specific-regulation-mechanism" class="headerlink" title="Identification of the potential tissue-specific regulation mechanism"></a>Identification of the potential tissue-specific regulation mechanism</h3><p>Table 1 List of the tissues-specific candidate genes associated with agronomic traits and reported biological function.<br> <img src="/2023/01/16/article/table1.jpg" alt="table"></p>
 <table>
 <thead>
 <tr>
-<th>Gene</th>
-<th>Tissue</th>
-<th>Trait</th>
-<th>Gene position</th>
-<th>eQTL</th>
-<th>QTL</th>
-<th>Gene-trait correlation(ρ&#x2F; P value）</th>
-<th>Species&#x2F; Role (Reference)</th>
+<th>二项分布</th>
+<th>几何分布</th>
+<th>泊松分布</th>
+<th>超几何分布</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>GRMZM2G700665(Rap2.7)</td>
-<td>RT</td>
-<td>EH</td>
-<td>Chr8 131576888-131580316</td>
-<td>S8_131596242</td>
-<td>S8_131596224</td>
-<td>0.10&#x2F;0.09</td>
-<td>Maize&#x2F; Brace roots development (Li et al., 2019)</td>
+<td>具有可能结果x次的概率</td>
+<td>第x次具有第一次可能结果出现的概率</td>
+<td>某个时间范围内，<br />发生某件事情x次的概率</td>
+<td></td>
 </tr>
 <tr>
-<td>GRMZM2G700665(Rap2.7)</td>
-<td>RT</td>
-<td>EP</td>
-<td>Chr8 131576888-131580316</td>
-<td>S8_131596242</td>
-<td>S8_131596218</td>
-<td>0.11&#x2F;0.07</td>
-<td>Maize&#x2F; Brace roots development (Li et al., 2019)</td>
-</tr>
-<tr>
-<td>GRMZM2G171650(MADS69)</td>
-<td>SH</td>
-<td>DTA</td>
-<td>Chr3 159022118-159050063</td>
-<td>-</td>
-<td>-</td>
-<td>-0.41&#x2F;4.7E-12</td>
-<td>Maize&#x2F; Flowering time (Liang et al., 2019)</td>
-</tr>
-<tr>
-<td>GRMZM2G090738(RPL5)</td>
-<td>SH</td>
-<td>EH</td>
-<td>Chr1 7157855-7162079</td>
-<td>S1_7184838</td>
-<td>S1_7395467</td>
-<td>0.11&#x2F;0.09</td>
-<td>Rice&#x2F; Plant development(Moin et al., 2016)</td>
-</tr>
-<tr>
-<td>GRMZM2G090738(RPL5)</td>
-<td>LN</td>
-<td>PE</td>
-<td>Chr1 7157855-7162079</td>
-<td>-</td>
-<td>-</td>
-<td>-0.25&#x2F;7.1E-5</td>
-<td>Rice&#x2F; Plant development(Moin et al., 2016)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody></table>
-<p>All code needed to reproduce the results from this study are available on GitHub(<a target="_blank" rel="noopener" href="https://github.com/leilei37/scripts">https://github.com/leilei37/scripts</a>). </p>
-<p> <br>References<br>LI J, CHEN F, LI Y, et al. 2019. ZmRAP2.7, an AP2 Transcription Factor, Is Involved in Maize Brace Roots Development. Front Plant Sci [J], 10: 820.<br>LIANG Y, LIU Q, WANG X, et al. 2019. ZmMADS69 functions as a flowering activator through the ZmRap2.7-ZCN8 regulatory module and contributes to maize flowering time adaptation. New Phytol [J], 221: 2335-2347.<br>MOIN M, BAKSHI A, SAHA A, et al. 2016. Rice Ribosomal Protein Large Subunit Genes and Their Spatio-temporal and Stress Regulation. Front Plant Sci [J], 7: 1284.</p>
+<p>独立性检验<br>chi.test需所有单元期望数&gt;5,样本数&gt;40<br>fisher.test最小单元期望数&lt;5</p>
+<p>相关分析<br>pearson spearman kendall<br>note：如果散点图表明“可能是单调的，可能是线性的”关系，最好的选择是 Spearman 而不是 Pearson。即使数据证明是完全线性的，用 Spearman 也不会造成信息丢失。但是，如果不是完全线性但使用 Pearson 系数，会丢失 Spearman 可以捕获的信息，是否单调。</p>
+<p>相关性检验<br>2个 t检验；多个 方差分析</p>
+<p>生物学重复？<br>随机完全区组<br>双因素方差分析<br>环境 样本</p>
 
         
     </div>
@@ -360,16 +249,322 @@ class="article article-type-post"
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2023-01-16T13:05:31.000Z" itemprop="datePublished">2023-01-16</time>
+  <time datetime="2022-11-18T02:30:11.000Z" itemprop="datePublished">2022-11-18</time>
+</div>
+    
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-r2"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2022/11/17/r2/">r2</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <span id="more"></span>
+
+
+<p>D&#x3D;P(AB)-P(A)*P(B)		各配子基因型绝对值相同，可正可负；因D的取值受人为制定的等位基因频率影响，引入标准化的不平衡系数D’；</p>
+<p>D’&#x3D;D&#x2F;Dmax		不能比较不同研究之间的LD程度且依赖样本量大小，只包括重组史；</p>
+<p>当D&lt;0, Dmax&#x3D;min{P(A)P(B),P(a)P(b)}；</p>
+<p>当D&gt;0, Dmax&#x3D;min{P(A)P(b),P(a)P(B)}</p>
+<hr>
+<p>推导过程：u s t v 分别为AB，Ab，aB，ab频率</p>
+<p>DAB&#x3D;pAB-pApB&#x3D;u(1-u-s-t)-st&#x3D;uv-st</p>
+<p>同理得DAb&#x3D;-（uv-st）</p>
+<p>令uv-st&#x3D;D</p>
+<p>pAB&#x3D;pApB+D pAb&#x3D;pApb-D</p>
+<p>当D&gt;0 因pAb不能为负</p>
+<p>故得出以上结论</p>
+<hr>
+<p>r2&#x3D;D*D&#x2F;(P(A)P(a)P(B)P(b))		包括重组和突变，r2的期望值和有效种群大小和重组系数相关，r2&#x3D;1&#x2F;(1+4NeC),其中Ne是有小种群大小，C是重组系数。<a target="_blank" rel="noopener" href="https://www.plob.org/article/21675.html">https://www.plob.org/article/21675.html</a></p>
+<p>note：R2用于回归评价指标，1表示预测跟真实结果完美匹配</p>
+<p>genomic LD：半衰期确定lead snp区间<br>或 block LD：locus zoom确定小区域<br>最终确定candidate gene</p>
+<p>LD群体遗传学作用：一方面可以判断GWAS所需标记量，决定GWAS的检测效力以及精度；另外也可以辅助分析进化与选择，在同一个连锁群上，LD衰减慢说明该群体受到选择，一般来说，野生群体比驯化改良群体LD衰减快，异花授粉植物比自花授粉植物LD衰减快。<br>连锁也并不一定是导致不平衡的唯一原因。？（wjkp30）[连锁不平衡的程度取决于多方面的因素，包括遗传连锁、自然选择、基因重组的概率、突变率、遗传漂变、婚配制度、选型交配以及种群结构。<br>连锁并不一定意味着一定存在不平衡，长期随机交配也可以导致平衡。</p>
+<p><strong>两个座位间不平衡的显著检验</strong></p>
+<p>卡方检验</p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2022-11-17T15:42:09.000Z" itemprop="datePublished">2022-11-17</time>
+</div>
+    
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-gwas"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2022/11/17/gwas/">gwas-kinship</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>亲缘系数（coefficient of kinship）：从两个个体中分别随机抽取一个同源等位基因，这两个基因是IBD的概率（相同且来自同一个祖先）。直接衡量个体间亲缘关系。</p>
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2022-11-17T13:20:11.000Z" itemprop="datePublished">2022-11-17</time>
+</div>
+    
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-blup"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2022/11/17/blup/">BLUP</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>表型值（P）&#x3D;加性遗传效应（A）+显性效应（D）+上位效应（I）+系统环境效应（ES）+随机环境效应（ER）</p>
+<p>加性遗传效应即<strong>育种值</strong>(EBV)。</p>
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2022-11-17T13:04:36.000Z" itemprop="datePublished">2022-11-17</time>
+</div>
+    
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-g-sequencing"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2022/11/17/g-sequencing/">sequencing</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <p>sanger<br>NGS Next Generations Sequencing <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/335770966">https://zhuanlan.zhihu.com/p/335770966</a><br>array<br>pacbio long read</p>
+<p>WGS<br>whole-exome sequence(WES)</p>
+<p>GATK-SV SVtolls Absinthe</p>
+<p>SNV indel SV</p>
+<p>human genome：<br>tada：association between disease and sv（<a target="_blank" rel="noopener" href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-022-02631-z%EF%BC%89">https://genomebiology.biomedcentral.com/articles/10.1186/s13059-022-02631-z）</a><br>T2T-CHM13<br>LOF（lost of function）预测模型？<br>graphic reference call sv 更准确？(<a target="_blank" rel="noopener" href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-022-02631-z">https://genomebiology.biomedcentral.com/articles/10.1186/s13059-022-02631-z</a>)</p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2022-11-17T12:56:52.000Z" itemprop="datePublished">2022-11-17</time>
+</div>
+    
+    
+    </div>
+</footer>
+
+</article>
+
+    
+  
+    
+      <article
+id="post-leilei-blog"
+class="article article-type-post"
+>
+
+
+
+<div class="article-inner">
+    
+
+    <div class="article-body">
+    <header class="article-title">
+        <a href="/2022/11/17/leilei-blog/">OUTLINE</a>
+    </header>
+    <div class="article-entry post-inner-html">
+        
+        <h3 id="Genotype-preparation"><a href="#Genotype-preparation" class="headerlink" title="Genotype preparation"></a>Genotype preparation</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://leilei37.github.io/2022/11/17/g-sequencing/">Sequencing</a></li>
+<li><a target="_blank" rel="noopener" href="https://leilei37.github.io/2022/12/09/imputation/">Imputation</a></li>
+<li>QC（call rate, MAF）</li>
+<li><a target="_blank" rel="noopener" href="https://leilei37.github.io/2022/11/19/cluster-analysis/">Cluster analysis</a>    <a target="_blank" rel="noopener" href="https://github.com/leilei37/scripts/blob/main/pca%26cluster.R">[code]</a></li>
+<li>其他比对 SV、CNV</li>
+</ol>
+<h3 id="Phenotype-preparation"><a href="#Phenotype-preparation" class="headerlink" title="Phenotype preparation"></a>Phenotype preparation</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://leilei37.github.io/2022/11/17/blup/#more">BLUP</a></li>
+</ol>
+<h3 id="Basic-statistics"><a href="#Basic-statistics" class="headerlink" title="Basic statistics"></a>Basic statistics</h3><ol>
+<li>Distrubution<br>zscore(Normalization or Standardization)</li>
+<li><a target="_blank" rel="noopener" href="https://leilei37.github.io/2022/11/18/independence-test/">Corelate</a><br>(pearson,spearman,kendall,<br>fisher,chip-squared test)</li>
+<li>Linear algebra                      ……  </li>
+<li>Bayesian</li>
+<li>probability and Likelihood</li>
+<li>Least squares method                …… —&gt; <a target="_blank" rel="noopener" href="https://leilei37.github.io/2023/01/11/Statictics/">statistics</a></li>
+<li><a target="_blank" rel="noopener" href="https://leilei37.github.io/2022/11/17/r2/">How to calculate &#39;r2&#39;?</a><br>LD function(LDSC)</li>
+<li>Bonferroni</li>
+</ol>
+<h3 id="GWAS"><a href="#GWAS" class="headerlink" title="GWAS"></a>GWAS</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://leilei37.github.io/2022/11/17/gwas/">kinship</a><br>How to deal with population strucure?<br>（<a target="_blank" rel="noopener" href="https://leilei37.github.io/2022/11/19/Phylogenetic-tree/">Phylogenetic tree</a>）</li>
+<li><a target="_blank" rel="noopener" href="https://leilei37.github.io/2022/11/19/gwas-model/">GWAS model</a></li>
+<li>What are <code>lambda</code>, <code>P</code>, <code>PVE</code>, <code>effect size</code>?</li>
+<li><a target="_blank" rel="noopener" href="https://leilei37.github.io/2022/11/19/pick-p/">How to pick &#39;p threshold&#39;?</a><br>(how to calculate independent snp?)</li>
+<li>Fine mapping<br><a target="_blank" rel="noopener" href="https://leilei37.github.io/2022/11/19/conditional-analysis/">conditional analysis</a>    <a target="_blank" rel="noopener" href="https://github.com/leilei37/scripts/blob/main/cojo_for_finemapping.R">[code]</a></li>
+<li>LD block<br>locus zoom	  <a target="_blank" rel="noopener" href="https://github.com/leilei37/scripts/blob/main/locuszoom.R">[code]</a></li>
+</ol>
+<h3 id="others"><a href="#others" class="headerlink" title="others"></a>others</h3><p>BSA analysis<br>trio-GWAS<br>haplotype analysis<br><a target="_blank" rel="noopener" href="https://leilei37.github.io/2023/02/05/prs/">PRS</a></p>
+<h3 id="GS"><a href="#GS" class="headerlink" title="GS"></a>GS</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://leilei37.github.io/2022/12/10/gs/">GS model</a></li>
+<li>Genomic prediction(G matrix)		<a target="_blank" rel="noopener" href="https://github.com/leilei37/meta/blob/main/GS.R">[code]</a><br>Prediction acuracy(cross validation)	<a target="_blank" rel="noopener" href="https://github.com/leilei37/meta/blob/main/model%20validation.R">[code]</a></li>
+</ol>
+<h3 id="sQTL"><a href="#sQTL" class="headerlink" title="sQTL"></a>sQTL</h3><p><a target="_blank" rel="noopener" href="https://leilei37.github.io/2023/08/09/leafcutter/">Instrument</a>（leafcutter踩坑指南）</p>
+<h3 id="post-analysis"><a href="#post-analysis" class="headerlink" title="post-analysis"></a>post-analysis</h3><ol start="7">
+<li><a target="_blank" rel="noopener" href="https://leilei37.github.io/2022/11/19/heritability/">Heritability</a></li>
+<li>SNP annotation	   <a target="_blank" rel="noopener" href="https://github.com/leilei37/scripts/blob/main/snpEff">[code]</a></li>
+<li>neutrality tests</li>
+</ol>
+<h3 id="Integrative-analysis"><a href="#Integrative-analysis" class="headerlink" title="Integrative analysis"></a>Integrative analysis</h3><ol>
+<li>Colocalization<br>共定位	<a target="_blank" rel="noopener" href="https://github.com/leilei37/scripts/blob/main/remove_tight.loci.R">[code]</a></li>
+<li>MR		<a target="_blank" rel="noopener" href="https://github.com/leilei37/scripts/blob/main/MR.R">[code]</a></li>
+</ol>
+<h3 id="TWAS"><a href="#TWAS" class="headerlink" title="TWAS"></a>TWAS</h3><ol>
+<li>TWAS model	<a target="_blank" rel="noopener" href="https://github.com/leilei37/scripts/blob/main/osca%20moment.sh">[code]</a></li>
+</ol>
+<h3 id="Meta-analysis"><a href="#Meta-analysis" class="headerlink" title="Meta-analysis"></a>Meta-analysis</h3><ol>
+<li>Merge different Genotype	<a target="_blank" rel="noopener" href="https://github.com/leilei37/meta/blob/main/Genotype%20preparation">[code]</a></li>
+</ol>
+<h2 id="Analysis-about-DNA"><a href="#Analysis-about-DNA" class="headerlink" title="Analysis about DNA"></a>Analysis about DNA</h2><h3 id="ATAC-seq-code"><a href="#ATAC-seq-code" class="headerlink" title="ATAC-seq   [code]"></a>ATAC-seq   <a target="_blank" rel="noopener" href="https://github.com/leilei37/epi/blob/main/atac_batch.sh">[code]</a></h3><ol>
+<li>Chrom accessibility region(where, function)</li>
+<li>Method</li>
+</ol>
+<h3 id="Bisfule-seq-code"><a href="#Bisfule-seq-code" class="headerlink" title="Bisfule-seq	[code]"></a>Bisfule-seq	<a target="_blank" rel="noopener" href="https://github.com/leilei37/epi/blob/main/batch_meth.sh">[code]</a></h3><ol>
+<li>Method</li>
+<li>DMR	<a target="_blank" rel="noopener" href="https://github.com/leilei37/epi/blob/main/DSSforDMR.R">[code]</a></li>
+</ol>
+<h3 id="DAP-seq"><a href="#DAP-seq" class="headerlink" title="DAP-seq"></a>DAP-seq</h3><h3 id="RNA-seq-code"><a href="#RNA-seq-code" class="headerlink" title="RNA-seq    [code]"></a>RNA-seq    <a target="_blank" rel="noopener" href="https://github.com/leilei37/rnaseq/blob/main/rsq.sh">[code]</a></h3><p><a target="_blank" rel="noopener" href="https://ming-lian.github.io/2019/02/08/Stat-on-RNAseq/">https://ming-lian.github.io/2019/02/08/Stat-on-RNAseq/</a><br>1.Sequencing(depth,coverage,library)<br>  <a target="_blank" rel="noopener" href="https://www.jieandze1314.com/post/cnposts/239/">https://www.jieandze1314.com/post/cnposts/239/</a><br>  批次效应 batch<br>2.How to aligh<br>3.Flow and note</p>
+<h3 id="Find-DEG-code"><a href="#Find-DEG-code" class="headerlink" title="Find DEG	[code]"></a>Find DEG	<a target="_blank" rel="noopener" href="https://github.com/leilei37/rnaseq/blob/main/preparation%20for%20deg">[code]</a></h3><p>R package: Deseq principles</p>
+<h3 id="WGCNA-code"><a href="#WGCNA-code" class="headerlink" title="WGCNA    [code]"></a><a target="_blank" rel="noopener" href="https://leilei37.github.io/2022/11/19/WGCNA/">WGCNA</a>    <a target="_blank" rel="noopener" href="https://github.com/leilei37/scripts/blob/main/7tiwgcna.R">[code]</a></h3><h3 id="Interpreting-literature："><a href="#Interpreting-literature：" class="headerlink" title="Interpreting literature："></a>Interpreting literature：</h3><p>Using Interactome Big Data to Crack Genetic Mysteries and Enhance Future Crop Breeding - ScienceDirect<br>Open problems in human trait genetics | Genome Biology<br><a target="_blank" rel="noopener" href="https://leilei37.github.io/2022/12/09/gtex/">GTEX</a></p>
+<h3 id="Book-to-read"><a href="#Book-to-read" class="headerlink" title="Book to read"></a>Book to read</h3><p>Likelihood<br>算法设计与分析基础_第3版<br>机器学习周志华</p>
+<h4 id="学习思路"><a href="#学习思路" class="headerlink" title="学习思路"></a>学习思路</h4><p>statistics -&gt; <a target="_blank" rel="noopener" href="https://leilei37.github.io/2023/04/12/DataScience/">data science</a><br>quantitative genetics</p>
+<h3 id="Algorithm-amp-Programming"><a href="#Algorithm-amp-Programming" class="headerlink" title="Algorithm &amp; Programming"></a>Algorithm &amp; Programming</h3><p><a target="_blank" rel="noopener" href="https://seisman.github.io/how-to-write-makefile/invoke.html">Makefile</a><br>R packages: <a target="_blank" rel="noopener" href="https://leilei37.github.io/2022/11/25/ggplot/">ggplot</a></p>
+
+        
+    </div>
+    </div>
+
+    <div class="article-badge">
+        
+        
+    </div>
+
+</div>
+
+<footer class="article-footer">
+    <div class="article-more-info">
+    <div class="article-date">
+  <time datetime="2022-11-17T09:55:26.000Z" itemprop="datePublished">2022-11-17</time>
 </div>
     
         <div class="article-category">
-        <a class="article-category-link" href="/categories/My-Article/">My Article</a>
+        <a class="article-category-link" href="/categories/My-Outline/">My Outline</a>
         </div>
     
     
         <div class="article-tag">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/My-Article/" rel="tag">My Article</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/My-Outline/" rel="tag">My Outline</a></li></ul>
         </div>
     
     </div>
@@ -381,7 +576,7 @@ class="article article-type-post"
   
     
       <article
-id="post-prs"
+id="post-Hi"
 class="article article-type-post"
 >
 
@@ -392,59 +587,14 @@ class="article article-type-post"
 
     <div class="article-body">
     <header class="article-title">
-        <a href="/2023/02/05/prs/">PRS</a>
+        <a href="/2022/11/17/Hi/"></a>
     </header>
     <div class="article-entry post-inner-html">
         
-        <p>PGS are biomarkers, i.e., predictors of risk of diseases<br>PGS can be measured at any time during life (e.g., birth)<br>    • Remain the same thru life because DNA is the same<br>    • Update if GWAS discovery or PGS method change<br>PGS are not diagnostic genetic tests*<br>    • Genetic risk only account for part of risk<br>    • PGS only account for part of the genetic risk<br>    • PGS will improve in accuracy as WAS discovery sample size increase<br>For an individual the prediction of error of a PGS is high, but the set of individuals with high PGS is significantly enriched for those who go on to get disease*<br>    • Useful for risk stratification<br>PGS can be included in risk predictors that include other risk factors*<br>    • Most non-genetic risk factors change with age<br>People without family history of a common disease could have high PGS<br>    • PGS will vary between children of the same parents reflecting segregation variance<br>People with family history of a common disease may or may not have high PGS<br>    • PGS captures only part of the genetic contribution to risk and so the relationship between PGS and family history will vary between families<br>PGS can have clinical utility without knowledge of causal risk variants<br>Common causal risk variants are ancient and shared across <code>ancestries</code>, transferability of PGS is improved if causal variants are identified and selected for use in the PGS.</p>
-<h3 id="clinical-utility"><a href="#clinical-utility" class="headerlink" title="clinical utility"></a>clinical utility</h3><p>• Disease risk prediction<br>• Improving and refining diagnoses<br>• Slowing disease progression &amp; recurrence<br>• Improving population screening<br>• Prompting risk-reducing behaviours<br>• Improving cost and efficiency of trials</p>
-<h3 id="combine-monogenetic-with-polygenetic"><a href="#combine-monogenetic-with-polygenetic" class="headerlink" title="combine monogenetic with polygenetic"></a>combine monogenetic with polygenetic</h3><h3 id="risk-of-PRS"><a href="#risk-of-PRS" class="headerlink" title="risk of PRS"></a>risk of PRS</h3><p>• ‘False positive’ results<br>• Failure to convey uncertainty (false genetic determinism)<br>• Biases of representation (e.g. demographics)<br>• Healthcare professionals<br>• Communication of PGS results<br>• Psychosocial effects (e.g. anxiety, depression)<br>• Racists<br>• Embryo selection </p>
-<h3 id="age-specific-PRS-ancestry-specific-PRS"><a href="#age-specific-PRS-ancestry-specific-PRS" class="headerlink" title="age-specific PRS, ancestry-specific PRS"></a>age-specific PRS, ancestry-specific PRS</h3>
-        
-    </div>
-    </div>
+        <p><img src="/2022/11/17/Hi/hi.jpg"> </p>
+<center>Hi, there! I'm LeiMengyu. </center>
 
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2023-02-05T03:41:31.000Z" itemprop="datePublished">2023-02-05</time>
-</div>
-    
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-DataScience"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2023/04/12/DataScience/">DataScience</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <p>参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/68307444">https://zhuanlan.zhihu.com/p/68307444</a><br>OUTLINE: RCT[试验] -&gt; Potential Outcome Framework(&#x2F;Structural Equation Modeling(适用于社会科学))[分析框架] -&gt; 置信区间理论&#x2F;Fisher exact test[分析方法]</p>
-<p>因果关系定义与潜在结果分析框架(Rubin因果模型)<br>该模型三要素：潜在结果(Potential Outcome)、个体处理稳定性假设(Stable Unit Treatment Value Assumption, SUTVA），并提到了分配机制(Assignment Mechanism)的重要性。</p>
-<p>观察到的偏差&#x3D;treatment effect + selected bias<br>随机对照试验(Randomized Controlled Trials, RCT)可以让选择偏差消失。</p>
+<p>In 2021, I started my study in quantitative genetics. This blog was created to record and summarize what I have learned. It is still in its initial stage of construction, and the summary of theoretical part is still being improved. Besides, my codes were posted there. Here is an <a target="_blank" rel="noopener" href="https://leilei37.github.io/2022/11/17/leilei-blog/">outline</a> of my blog. My first <a target="_blank" rel="noopener" href="https://leilei37.github.io/2023/01/16/article/">article</a> is in preparation. </p>
 
         
     </div>
@@ -460,149 +610,7 @@ class="article article-type-post"
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2023-04-12T08:43:08.000Z" itemprop="datePublished">2023-04-12</time>
-</div>
-    
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-LDAK"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2023/05/24/LDAK/">LDAK</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <h3 id="Re-evaluation-of-SNP-heritability-in-complex-human-traits"><a href="#Re-evaluation-of-SNP-heritability-in-complex-human-traits" class="headerlink" title="Re-evaluation of SNP heritability in complex human traits"></a>Re-evaluation of SNP heritability in complex human traits</h3><p>得出 SNP 的预期遗传力与次要等位基因频率 (MAF)、与其他 SNP 的连锁不平衡 (LD) 水平和基因型确定性之间的近似关系</p>
-<h3 id="SumHer-better-estimates-the-SNP-heritability-of-complex-traits-from-summary-statistics"><a href="#SumHer-better-estimates-the-SNP-heritability-of-complex-traits-from-summary-statistics" class="headerlink" title="SumHer better estimates the SNP heritability of complex traits from summary statistics"></a>SumHer better estimates the SNP heritability of complex traits from summary statistics</h3><h3 id="Improved-genetic-prediction-of-complex-traits-from-individual-level-data-or-summary-statistics"><a href="#Improved-genetic-prediction-of-complex-traits-from-individual-level-data-or-summary-statistics" class="headerlink" title="Improved genetic prediction of complex traits from individual-level data or summary statistics"></a>Improved genetic prediction of complex traits from individual-level data or summary statistics</h3><p>GCTA与本文提出方法的区别：前者每个snp的h2（effect size）是常数（相同），后者，因为每个snp的h2受MAF、LD和功能注释影响<br>PRS<br>预测准确性R2（公式？） 上限为遗传力</p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2023-05-24T09:22:19.000Z" itemprop="datePublished">2023-05-24</time>
-</div>
-    
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-leafcutter"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2023/08/09/leafcutter/">leafcutter 使用说明</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <p>比对、junc文件的获得参考<a target="_blank" rel="noopener" href="http://davidaknowles.github.io/leafcutter/">http://davidaknowles.github.io/leafcutter/</a><br>（note1：issue里说python已更新到3.8）<br>（note2：确认junc文件的染色体名为1，2，3或chr1，chr2: 因为玉米v3基因组不是这种命名方法，故使用python fixjun.py更改）</p>
-<h2 id="Intron-clustering"><a href="#Intron-clustering" class="headerlink" title="Intron clustering"></a>Intron clustering</h2><p><code>python ./leafcutter/clustering/leafcutter_cluster_regtools.py -j junction1.txt -m 30 -o all3 -l 500000 -p 0.001 -k True</code><br>参数-k True表示进行染色体名称确认；-p表示minimum fraction of reads in a cluster that support a junction<br>（note：此前直接使用染色体名称不正确的junc文件进行聚类不会报错，会输出错误结果，所以需要注意junc文件染色体名称问题）</p>
-<p>此时会得到两个文件_perind.counts.gz和_perind_numers.counts.gz，前者为各剪切体的数目，可以通过igv查看bam文件确认是否正确对应；后者为x&#x2F;y格式文件，分子x指该剪切体的数目，分母为该剪切体所在cluster的总数目，cluster的计算参考leafcutter的ng文章。</p>
-<p>因为我的目的是在多组织中定位sQTL，为了方便后续组织间比较，所以聚类时使用所有组织的所有样本。<br>为了方便在单个组织定位，需要把属于同一组织的样本提取出来，并使用自交系名称替换sra号。<br><code>python grepcol3.py</code></p>
-<h2 id="准备表型文件"><a href="#准备表型文件" class="headerlink" title="准备表型文件"></a>准备表型文件</h2><p><code>python prepare_phenotype_table.py /public/home/leimengyu/bam/SRR_perind.counts.gz -p 10</code><br>（note：输入为上步得到的_perind.counts.gz文件）<br>此时会得到两类文件 _phen文件和qqnorm文件；<br>phen文件的操作为：默认为filter out introns used in less than 40% of individuals or with almost no variation，并将 x&#x2F;y 进行x+0.5&#x2F;y+0.5 计算，得到的数值写入phen文件。<br>qqnorm文件的操作为：将_perind.counts.gz中的矩阵中的x先按行进行scale标准化，再按列进行qqnorm正态化。（进行该操作的原因待探索）<br>如果后续使用推荐FastQTL进行sQTL定位，直接操作sh xx_prepare.sh（该文件内容是tabix and bgzip qqnorm文件）。</p>
-<h2 id="sQTL定位"><a href="#sQTL定位" class="headerlink" title="sQTL定位"></a>sQTL定位</h2><p>为了通过曼哈顿图等确认定位结果的可靠性，我们使用genable进行定位。<br>但定位结果曼哈顿图有散点并且trans-sQTL过多，难以用生物学知识解释。<br>查看表型分布图，分布偏，在预期之内，因为splice 逼近一个分类性状，有的个体splice I型，有的 II型，不会很多，但是这种分布拖尾严重。<br>查看trans-QTL的boxplot图发现，两allele的数目不均，存在其中一个的样本数过少，并且四分位图过宽，表示定位结果不可靠，大概率是拖尾的个体，带的低频snp的原因。<br>同时发现boxplot图中会出现杂合子，因为我用的都是自交系，自交系都是纯系，不应有这种情况，可能是因为测序深度不够导致snp-calling时出现问题。<br>查看使用的rna-seq测序文件，文件过小，500mb左右，该数据为2017年测序，现（2023年）大多数测序深度变深，一个文件大概有6gb大小，最终确定原因，放弃该部分探索。</p>
-<p>文章所提到的python代码可在<a target="_blank" rel="noopener" href="https://github.com/leilei37/scripts/tree/main">https://github.com/leilei37/scripts/tree/main</a> 中找到。</p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2023-08-09T02:35:42.000Z" itemprop="datePublished">2023-08-09</time>
-</div>
-    
-    
-    </div>
-</footer>
-
-</article>
-
-    
-  
-    
-      <article
-id="post-ml"
-class="article article-type-post"
->
-
-
-
-<div class="article-inner">
-    
-
-    <div class="article-body">
-    <header class="article-title">
-        <a href="/2023/08/31/ml/">ml</a>
-    </header>
-    <div class="article-entry post-inner-html">
-        
-        <p>cross validation</p>
-<p>sensitivity：the TP(true positive) were correctly identified by the model. TP&#x2F;(TP+FN)<br>specificity:the TN(true negative) were correctly identified by the model. TN&#x2F;(TN+FP)<br>bias &amp; variance : overfit<br>3 commonly model: regularization, boosting, and bagging(random forest)<br>ROC: to choose the optimal threshold. higher y, lower x.<br>AUC: to choose the model. ROC与x轴围成的面积，越大越好<br>precision&#x3D;TP&#x2F;(TP+FP) [研究罕见病时使用，因为此时TN多</p>
-<h2 id="calculate-AUC"><a href="#calculate-AUC" class="headerlink" title="calculate AUC"></a>calculate AUC</h2><p><a target="_blank" rel="noopener" href="https://github.com/StatQuest/roc_and_auc_demo/blob/master/roc_and_auc_demo.R">code from StatQuest</a><br><code>par(pty = &quot;s&quot;)</code> #make the plot as a square</p>
-<p>Entropy</p>
-
-        
-    </div>
-    </div>
-
-    <div class="article-badge">
-        
-        
-    </div>
-
-</div>
-
-<footer class="article-footer">
-    <div class="article-more-info">
-    <div class="article-date">
-  <time datetime="2023-08-31T00:45:37.000Z" itemprop="datePublished">2023-08-31</time>
+  <time datetime="2022-11-17T09:55:25.000Z" itemprop="datePublished">2022-11-17</time>
 </div>
     
     
