@@ -196,10 +196,14 @@
         </div>
 
         <div class="article-entry post-inner-html hairline" itemprop="articleBody">
-            <p>cross validation</p>
-<p>sensitivity：the TP(true positive) were correctly identified by the model. TP&#x2F;(TP+FN)<br>specificity:the TN(true negative) were correctly identified by the model. TN&#x2F;(TN+FP)<br>bias &amp; variance : overfit<br>3 commonly model: regularization, boosting, and bagging(random forest)<br>ROC: to choose the optimal threshold. higher y, lower x.<br>AUC: to choose the model. ROC与x轴围成的面积，越大越好<br>precision&#x3D;TP&#x2F;(TP+FP) [研究罕见病时使用，因为此时TN多</p>
+            <p>cross validation<br>sensitivity：the TP(true positive) were correctly identified by the model. TP&#x2F;(TP+FN)<br>specificity:the TN(true negative) were correctly identified by the model. TN&#x2F;(TN+FP)<br>bias &amp; variance : overfit<br>3 commonly model: regularization, boosting, and bagging(random forest)<br>ROC: to choose the optimal threshold. higher y, lower x.<br>AUC: to choose the model. ROC与x轴围成的面积，越大越好<br>precision&#x3D;TP&#x2F;(TP+FP) [研究罕见病时使用，因为此时TN多</p>
 <h2 id="calculate-AUC"><a href="#calculate-AUC" class="headerlink" title="calculate AUC"></a>calculate AUC</h2><p><a target="_blank" rel="noopener" href="https://github.com/StatQuest/roc_and_auc_demo/blob/master/roc_and_auc_demo.R">code from StatQuest</a><br><code>par(pty = &quot;s&quot;)</code> #make the plot as a square</p>
-<p>Entropy</p>
+<p>Entropy:value of surprise<br>mutual information; joint probility; marginal probility<br><img src="/2023/08/31/ml/ml.jpg"> </p>
+<h2 id="design-matrix"><a href="#design-matrix" class="headerlink" title="design matrix"></a>design matrix</h2><p>combine t-test with regression (F-test)<br><img src="/2023/08/31/ml/ml2.jpg"><br>batch effect correct<br><img src="/2023/08/31/ml/ml3.jpg"></p>
+<p>odd and odd ratio</p>
+<h2 id="3-ways-to-determine-if-an-odds-ratio-is-statistically-significant"><a href="#3-ways-to-determine-if-an-odds-ratio-is-statistically-significant" class="headerlink" title="3 ways to determine if an odds ratio is statistically significant."></a>3 ways to determine if an odds ratio is statistically significant.</h2><p>1)Fisher’s Exact Test<br>2)Chi-Square Test<br>3)The Wald Test</p>
+<h2 id="coeffecient-of-logistic-regression"><a href="#coeffecient-of-logistic-regression" class="headerlink" title="coeffecient of logistic regression"></a>coeffecient of logistic regression</h2><p>？why the standard deviation is calculated by these<br>and how to calculate the standard error and z-value(&#x3D;Etimate&#x2F;standard error.by wald test.it’s the number of standard deviations the estimated intercept is away from 0 on a standard normal curve)<br><img src="/2023/08/31/ml/intercept.jpg"><br><img src="/2023/08/31/ml/slope.jpg"></p>
+<h2 id="R-square-and-p-value-of-logistic-regression"><a href="#R-square-and-p-value-of-logistic-regression" class="headerlink" title="R square and p-value of logistic regression"></a>R square and p-value of logistic regression</h2><p><img src="/2023/08/31/ml/ml4.jpg"></p>
 
         </div>
 
