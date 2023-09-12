@@ -207,6 +207,10 @@
 <h2 id="Saturated-Model-and-Deviance"><a href="#Saturated-Model-and-Deviance" class="headerlink" title="Saturated Model and Deviance"></a>Saturated Model and Deviance</h2><p>LL(Saturated model)always&#x3D;0 because the saturated model fit the spot well.<br><img src="/2023/08/31/ml/ml5.jpg"><br><img src="/2023/08/31/ml/ml6.jpg"></p>
 <p>AIC: Akaike Information Criterion. Residual adjusted for the number of parameters. can be used to compare one model to another.</p>
 <h2 id="logistic-regression-code"><a href="#logistic-regression-code" class="headerlink" title="logistic regression code"></a>logistic regression <a target="_blank" rel="noopener" href="https://github.com/StatQuest/logistic_regression_demo/blob/master/logistic_regression_demo.R">code</a></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># chi-square value = 2*(LL(Proposed) - LL(Null))</span><br><span class="line"># p-value = 1 - pchisq(chi-square value, df = 2-1)</span><br><span class="line">1 - pchisq(2*(ll.proposed - ll.null), df=1)</span><br><span class="line">1 - pchisq((logistic$null.deviance - logistic$deviance), df=1)</span><br></pre></td></tr></table></figure>
+<p>and predict.</p>
+<h2 id="Deviance-residuals"><a href="#Deviance-residuals" class="headerlink" title="Deviance residuals"></a>Deviance residuals</h2><p>the square root of the contribution that each data point has to the overall Residual Deviance. used to identify outliers.</p>
+<h2 id="PCA"><a href="#PCA" class="headerlink" title="PCA"></a>PCA</h2><p>using SVD(singular value decomposition)<br>singular vector&#x2F;eigenvector<br>loading scores<br>eigenvalue<br><img src="/2023/08/31/ml/pca1.jpg"><br><img src="/2023/08/31/ml/pca2.jpg"><br><img src="/2023/08/31/ml/pca3.jpg"></p>
+
         </div>
 
     </div>
