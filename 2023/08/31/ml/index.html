@@ -210,6 +210,18 @@
 <p>and predict.</p>
 <h2 id="Deviance-residuals"><a href="#Deviance-residuals" class="headerlink" title="Deviance residuals"></a>Deviance residuals</h2><p>the square root of the contribution that each data point has to the overall Residual Deviance. used to identify outliers.</p>
 <h2 id="PCA"><a href="#PCA" class="headerlink" title="PCA"></a>PCA</h2><p>using SVD(singular value decomposition)<br>singular vector&#x2F;eigenvector<br>loading scores<br>eigenvalue<br><img src="/2023/08/31/ml/pca1.jpg"><br><img src="/2023/08/31/ml/pca2.jpg"><br><img src="/2023/08/31/ml/pca3.jpg"><br>Tips:scaling,centering,and verify the number of principal components.<br><a target="_blank" rel="noopener" href="https://github.com/StatQuest/pca_demo/blob/master/pca_demo.R">code in R</a><br>note: prcomp require samples on rows. square pca$sdev can be used for %(eigenvector). rotation &#x3D; loading scores<br><a target="_blank" rel="noopener" href="https://github.com/StatQuest/pca_demo/blob/master/pca_demo.py">code in python</a><br><code>StandardScaler().fit_transform(data.T)</code></p>
+<h2 id="LDA"><a href="#LDA" class="headerlink" title="LDA"></a>LDA</h2><p>maximizing the seperatibility between 2 groups while PCA by focusing on the genes with the most variation.<br>2 criteria: Maximize the distance between means; minimize the variation (scatter;square s)within each category.<br><img src="/2023/08/31/ml/lda.jpg"></p>
+<h2 id="MDS-and-PCoA"><a href="#MDS-and-PCoA" class="headerlink" title="MDS and PCoA"></a>MDS and PCoA</h2><p><img src="/2023/08/31/ml/mds.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dist()</span><br><span class="line">cmdscale()</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://github.com/StatQuest/mds_and_pcoa_demo/blob/master/mds_and_pcoa_demo.R">code</a></p>
+<h2 id="t-SNE"><a href="#t-SNE" class="headerlink" title="t-SNE"></a>t-SNE</h2><h2 id="Hierarchical-Clustering"><a href="#Hierarchical-Clustering" class="headerlink" title="Hierarchical Clustering"></a>Hierarchical Clustering</h2><p>similarity(distance) to form clusters;<br>decide how to compare sub-clusters:<br>centroid<br>single-linkage<br>complete-linkage;<br>height of the branches in the ‘dendrogram’ shows what is most similar.</p>
+<h2 id="k-means-clustering"><a href="#k-means-clustering" class="headerlink" title="k-means clustering"></a>k-means clustering</h2><p>elbow plot to find ‘K’</p>
+<h2 id="DBSCAN"><a href="#DBSCAN" class="headerlink" title="DBSCAN"></a>DBSCAN</h2><p>radius of circle for a initial cluster<br>core point</p>
+<h2 id="K-nearest-neighbors"><a href="#K-nearest-neighbors" class="headerlink" title="K-nearest neighbors"></a>K-nearest neighbors</h2><h2 id="Naive-Bayes"><a href="#Naive-Bayes" class="headerlink" title="Naive Bayes"></a>Naive Bayes</h2><ul>
+<li>Multinomial Naive Bayes Classifier<br>  probability for discrete called likelihood<br>  set alpha<br>  high bia and low variance in ML</li>
+<li>Gaussian Naive Bayes Classification<br>  use log() to avoid ‘uderflow’</li>
+</ul>
+<h1 id="Decision-and-Classification-tree"><a href="#Decision-and-Classification-tree" class="headerlink" title="Decision and Classification tree"></a>Decision and Classification tree</h1><p>test leaves impure: gini imputity, entropy and information gain.<br>put lowest impurity leaves as node.<br>overfit if sample too small -&gt; pruning<br>                            -&gt; put limits on how trees grow(i.e. require x samples per leaf, x is determined by cross varidation)</p>
 
         </div>
 
