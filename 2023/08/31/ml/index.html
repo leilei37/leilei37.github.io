@@ -221,7 +221,11 @@
 <li>Multinomial Naive Bayes Classifier<br>  probability for discrete called likelihood<br>  set alpha<br>  high bia and low variance in ML</li>
 <li>Gaussian Naive Bayes Classification<br>  use log() to avoid ‘uderflow’</li>
 </ul>
-<h1 id="Decision-and-Classification-tree"><a href="#Decision-and-Classification-tree" class="headerlink" title="Decision and Classification tree"></a>Decision and Classification tree</h1><p>test leaves impure: gini imputity, entropy and information gain.<br>put lowest impurity leaves as node.<br>overfit if sample too small -&gt; pruning<br>                           or -&gt; put limits on how trees grow(i.e. require x samples per leaf, x is determined by cross varidation)<br>feature selection: cut off the feature not reduce the imputity to avoid overfit.</p>
+<h2 id="Decision-and-Classification-tree"><a href="#Decision-and-Classification-tree" class="headerlink" title="Decision and Classification tree"></a>Decision and Classification tree</h2><p>test leaves impure: gini imputity, entropy and information gain.<br>put lowest impurity leaves as node.<br>overfit if sample too small -&gt; pruning<br>                           or -&gt; put limits on how trees grow(i.e. require x samples per leaf, x is determined by cross varidation)<br>feature selection: cut off the feature not reduce the imputity to avoid overfit.</p>
+<h2 id="Regression-trees"><a href="#Regression-trees" class="headerlink" title="Regression trees"></a>Regression trees</h2><p>determine thresholds by calculating the sum of squared residual, pick up the smallest one.</p>
+<h3 id="prune-regression-tree"><a href="#prune-regression-tree" class="headerlink" title="prune regression tree:"></a>prune regression tree:</h3><p>cost complexity pruning(aka weakest link pruning)<br>–tree score &#x3D; SSR + alpha * T<br>(T represent the total number of leaves; alpha T &#x3D; tree complexity panelty)<br>–set which <strong>alpha</strong> gave us the lowest sum of squared ressiduals with the testing data；<strong>tree</strong> built by full data(train + test) </p>
+<p>? what is <strong>new</strong> training data and testing data</p>
+<h2 id="Encoding"><a href="#Encoding" class="headerlink" title="Encoding"></a>Encoding</h2><p>one-hot encoding: each dicerete item as a colname.<br>label encoding: as 1,2,3 but not good for meaning.<br>target encoding: mean for each dicerete item.</p>
 
         </div>
 
