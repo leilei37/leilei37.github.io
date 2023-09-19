@@ -232,15 +232,15 @@
 <li>fill-in missing values<br>proximity matrix: the time of <samples of column and row have same result> &#x2F; trees number<br>– orifinal dataset :for dicrete item: the weighted frequency for ‘yes’ is the frequency of ‘yes’ * the weight for ‘yes’<br>the weight for ‘yes’&#x3D; proximity of ‘yes’&#x2F;all proximities<br>iterative<br>distance&#x3D; 1-proximity value -&gt;heatmap&#x2F;MDS<br>– new sample: for dicrete item :guess each result and option, then iterative calculate, choose the most correct option, finally fill-in the data and classify the sample.</li>
 </ul>
 <p><a target="_blank" rel="noopener" href="https://github.com/StatQuest/random_forest_demo/blob/master/random_forest_demo.R">code</a><br>##mtry</p>
-<h2 id="loss-function"><a href="#loss-function" class="headerlink" title="loss function"></a>loss function</h2><p>fix slope to find optimal intercept.<br>the chain rule<br>sum of the squaired residuals is a type of loss function.</p>
+<h2 id="loss-function"><a href="#loss-function" class="headerlink" title="loss function"></a>loss function</h2><p>fix slope to find optimal intercept.<br>the chain rule (拆分求导)<br>sum of the squaired residuals is a type of loss function.</p>
 <h2 id="gradient-descent"><a href="#gradient-descent" class="headerlink" title="gradient descent"></a>gradient descent</h2><p>for LR: step size &#x3D; slope * learning rates (minimum &#x3D; 0.001)<br>note: the results is sensitive to <strong>learning rates</strong>,the way we change lr is called <strong>schedule</strong>.</p>
 <ul>
 <li>new intercept &#x3D; old intercept - step size<br>(also can be used to find both optimal slope and intercept)<br><strong>stochastic gradient descent</strong> which select subset of data rather than full dataset.<br>using 1 or mini-batch of samples for each step. easily update the parameters when add new data.<br>can be used to logistic regression and t-sne.</li>
 </ul>
 <h2 id="AdaBoost"><a href="#AdaBoost" class="headerlink" title="AdaBoost"></a>AdaBoost</h2><p>(<strong>stumps</strong> is a node with 2 leaves.)<br><strong>Amount of Say</strong><br><img src="/2023/08/31/ml/adaboost1.jpg"><br>Weighted Gini Function -&gt; sample weights<br><img src="/2023/08/31/ml/adaboost2.jpg"></p>
 <h2 id="Gradient-Boost"><a href="#Gradient-Boost" class="headerlink" title="Gradient Boost"></a>Gradient Boost</h2><ul>
-<li><strong>Gradient Boost</strong> for <strong>Regression</strong> is different from doing <strong>Linear Regression</strong>.<br><img src="/2023/08/31/ml/gradientboost1.jpg"><br><img src="/2023/08/31/ml/gradientboost2.jpg"></li>
-<li>for classification<br>log(odds)<br>logistic function -&gt; probability</li>
+<li><strong>Gradient Boost</strong> for <strong>Regression</strong> is different from doing <strong>Linear Regression</strong>.<br><img src="/2023/08/31/ml/gradientboost1.jpg"><br><img src="/2023/08/31/ml/gradientboost2.jpg"><br>M often &#x3D; 100</li>
+<li>for classification<br>log(odds)<br>logistic function -&gt; probability<br>limiting the number of leaves between 8 and 32.<br>? Does the predict probility set freely?<br><strong>Pseudo residuals</strong> means change residual by multiply to make calculate more simple.<br>the larger log(likelihood),the better prediction.<br>log(likelihood) multiply -1 as <strong>loss function</strong>.(argmin)<br>2nd order <strong>Taylor Polynomial</strong></li>
 </ul>
 
         </div>
