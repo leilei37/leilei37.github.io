@@ -196,7 +196,7 @@
         </div>
 
         <div class="article-entry post-inner-html hairline" itemprop="articleBody">
-            <p>cross validation<br>sensitivity：the TP(true positive) were correctly identified by the model. TP&#x2F;(TP+FN)<br>specificity:the TN(true negative) were correctly identified by the model. TN&#x2F;(TN+FP)<br>bias &amp; variance : overfit<br>3 commonly model: regularization, boosting, and bagging(random forest)<br>ROC: to choose the optimal threshold. higher y, lower x.<br>AUC: to choose the model. ROC与x轴围成的面积，越大越好<br>precision&#x3D;TP&#x2F;(TP+FP) [研究罕见病时使用，因为此时TN多</p>
+            <p>cross validation<br>sensitivity：the TP(true positive) were correctly identified by the model. TP&#x2F;(TP+FN)<br>specificity:the TN(true negative) were correctly identified by the model. TN&#x2F;(TN+FP)<br>bias &amp; variance : overfit<br>3 commonly model: regularization, boosting, and bagging(random forest)<br>ROC (FPR,TPR): to choose the optimal threshold. higher y, lower x.<br>AUC (ROC下面积): to choose the model. ROC与x轴围成的面积，越大越好<br>precision&#x3D;TP&#x2F;(TP+FP) [研究罕见病时使用，因为此时TN多</p>
 <h2 id="calculate-AUC"><a href="#calculate-AUC" class="headerlink" title="calculate AUC"></a>calculate AUC</h2><p><a target="_blank" rel="noopener" href="https://github.com/StatQuest/roc_and_auc_demo/blob/master/roc_and_auc_demo.R">code from StatQuest</a><br><code>par(pty = &quot;s&quot;)</code> #make the plot as a square</p>
 <p>Entropy:value of surprise<br>mutual information; joint probility; marginal probility<br><img src="/2023/08/31/ml/ml.jpg"> </p>
 <h2 id="design-matrix"><a href="#design-matrix" class="headerlink" title="design matrix"></a>design matrix</h2><p>combine t-test with regression (F-test)<br><img src="/2023/08/31/ml/ml2.jpg"><br>batch effect correct<br><img src="/2023/08/31/ml/ml3.jpg"></p>
@@ -240,7 +240,7 @@
 <h2 id="AdaBoost"><a href="#AdaBoost" class="headerlink" title="AdaBoost"></a>AdaBoost</h2><p>(<strong>stumps</strong> is a node with 2 leaves.)<br><strong>Amount of Say</strong><br><img src="/2023/08/31/ml/adaboost1.jpg"><br>Weighted Gini Function -&gt; sample weights<br><img src="/2023/08/31/ml/adaboost2.jpg"></p>
 <h2 id="Gradient-Boost"><a href="#Gradient-Boost" class="headerlink" title="Gradient Boost"></a>Gradient Boost</h2><ul>
 <li><strong>Gradient Boost</strong> for <strong>Regression</strong> is different from doing <strong>Linear Regression</strong>.<br><img src="/2023/08/31/ml/gradientboost1.jpg"><br><img src="/2023/08/31/ml/gradientboost2.jpg"></li>
-<li>for classification</li>
+<li>for classification<br>log(odds)<br>logistic function -&gt; probability</li>
 </ul>
 
         </div>
