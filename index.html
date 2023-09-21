@@ -258,6 +258,23 @@ class="article article-type-post"
 <h2 id="XGBoost-eXtreme-Gradient-Boost"><a href="#XGBoost-eXtreme-Gradient-Boost" class="headerlink" title="XGBoost(eXtreme Gradient Boost)"></a>XGBoost(eXtreme Gradient Boost)</h2><ul>
 <li>regression</li>
 <li>classification<br>similarity score<br>lambda: a <strong>Regularization Parameter</strong>, which reduce the prediction’s sensitivity to individual observations. prevented overfit. smaller output values for leaves.<br>gain-gamma -&gt; prune or not<br>eta (learning rate)<br>cover min_child_weight -&gt; prune<br>?predicted drug effectiveness &#x3D; 0.5<br><img src="/2023/08/31/ml/xgboost1.jpg"><br>pick optimal outputvalue to make L equation min<br>regularization penalty by increasing lambda, the optimal outputvalue gets closer to 0.<br>gradients (g); hessians (h)<br><img src="/2023/08/31/ml/xgboost2.jpg"><br>first 3 part is to predict, next is to <strong>Optimization</strong> for large dataset.</li>
+<li>greedy algorithm<br>quantile (default 33)</li>
+<li>sketch algorithms<br>weighted quantile sketch<br>weight &#x3D; previous probability * (1 - previous probability)</li>
+<li>Sparsity-Aware Split Fingding<br>for missing data</li>
+</ul>
+<h2 id="Cosine-Similarity"><a href="#Cosine-Similarity" class="headerlink" title="Cosine Similarity"></a>Cosine Similarity</h2><h2 id="Support-Vector-Machines"><a href="#Support-Vector-Machines" class="headerlink" title="Support Vector Machines"></a>Support Vector Machines</h2><p>Maximal Margin Classifiers<br>support vector classifier aka soft margin classifiers<br>above 2 can not handle many cluster of data, so we use support vector machines to find a relatively <strong>high</strong> dimensional support vector classifier.<br>hyperplane</p>
+<p>Function: </p>
+<ol>
+<li>polynomial kernel</li>
+</ol>
+<ul>
+<li>(a*b + r)^d<br>r,d varified by cross validation.</li>
+</ul>
+<ol start="2">
+<li>radial kernel aka radial basis function(RBF)kernel: in infinite dimension. behaves like <strong>weighted Nearest Neighbor</strong> model.</li>
+</ol>
+<ul>
+<li>e ^ (-gamma(a-b)^2)<br>gamma determined by cross validation.<br><strong>Taylor Series Expansion</strong><br><img src="/2023/08/31/ml/taylor.jpg"><br><img src="/2023/08/31/ml/radialkernel.jpg"><br><strong>Dot product</strong><br>when we plug numbers into radial kernel, the value we get is the relationship between the 2 points in infinite-dimensions.</li>
 </ul>
 
         
