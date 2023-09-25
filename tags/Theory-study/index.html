@@ -6,47 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     
-    <title>WGCNA | leilei&#39;s blog</title>
+    <title>Tag | Theory study | leilei&#39;s blog</title>
 
     <meta name="description" content="leilei&#39;s blog">
     <meta name="keywords" content="">
 
     
-
-    <meta property="og:locale" content="cn" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content= "WGCNA | leilei&#39;s blog"  />
-    <meta property="og:description" content= "leilei&#39;s blog" />
-    <meta property="og:url" content="http://example.com/2022/11/19/WGCNA/index.html" />
-    <meta property="og:site_name" content="" />
-    <meta property="article:author" content="leilei" />
-    <meta property="article:publisher" content="" />
-    <meta property="og:description" content="leilei&#39;s blog" />
-    <meta name="twitter:title" content="WGCNA | leilei&#39;s blog"/>
-    <meta name="twitter:description" content="leilei&#39;s blog"/>
-    <script type="application/ld+json">
-        {
-            "description": "leilei&#39;s blog",
-            "author": { "@type": "Person", "name": "leilei" },
-            "@type": "BlogPosting",
-            "url": "http://example.com/2022/11/19/WGCNA/index.html",
-            "publisher": {
-            "@type": "Organization",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "http://example.comundefined"
-            },
-            "name": "leilei"
-            },
-            "headline": "WGCNA | leilei&#39;s blog",
-            "datePublished": "2022-11-19T07:02:50.000Z",
-            "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": "http://example.com/2022/11/19/WGCNA/index.html"
-            },
-            "@context": "http://schema.org"
-        }
-    </script>
 
 
 
@@ -74,7 +39,7 @@
 
 
     <script>
-        window.isPost = true
+        window.isPost = false
         window.aomori = {
             
             
@@ -157,123 +122,34 @@
         <div class="main">
             <section class="inner">
                 <section class="inner-main">
-                    <div class="post">
-    <article id="post-clcum7pwn000762gu96m8c3kv" class="article article-type-post" itemscope
-    itemprop="blogPost">
+                    
 
-    <div class="article-inner">
-
-        
-          
-        
-        
-        
-
-        
-        <header class="article-header">
-            
+    
+    
+    
+    
+    <section class="archives-wrap">
+        <div class="archive-year-wrap">
+        <a href="/archives/2023" class="archive-year">2023</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
   
-    <h1 class="article-title" itemprop="name">
-      WGCNA
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2023/08/31/ml/">The Summary of Machine learning (StatQuest)</a>
     </h1>
   
-
-        </header>
-        
-
-        <div class="article-more-info article-more-info-post hairline">
-
-            <div class="article-date">
-  <time datetime="2022-11-19T07:02:50.000Z" itemprop="datePublished">2022-11-19</time>
-</div>
-
-            
-
-            
-
-            
-
-        </div>
-
-        <div class="article-entry post-inner-html hairline" itemprop="articleBody">
-            <span id="more"></span>
-
-
-<p>为了探究组织间的共表达网络的保守性和多样性，我们进行了加权共表达网络的构建。本部分使用R语言的<a href=""></a><a href="">WGCNA</a>包进行分析(Langfelder and<br>Horvath, 2008)。</p>
-<p>首先我们进行数据整理，在每个组织中随机选取2000个表达基因，通过“goodSamplesGenes”函数检验缺失值并对缺失值处理，随后通过样本聚类分析剔除离群样本，从而减少样本因素导致的误差。</p>
-<p>其次，我们对样本进行了层次聚类，进一步使用bicor相关系数进行基因间的表达相关系数的计算，后选取拟合曲线第一次接近0.9时的软阈值参数，将基因分类构成基因共表达模块，并验证共表达网络是否符合无尺度网络，即出现连接度为k的节点的对数log（k）与该节点出现的概率的对数log（P（k））要负相关，且相关系数要大于0.85。本研究通过“pickSoftThreshold”函数进行筛选最佳软阈值筛选。</p>
-<p>(SoftThreshold)</p>
-<p>再次，我们将表达矩阵转换成邻接矩阵，然后再将邻接矩阵转换成拓扑矩阵（TOM），基于TOM，我们使用average-linkage层次聚类法对基因进行聚类，按照混合动态剪切法在确定基因模块后，我们依次计算每个模块的特征向量值（eigengenes），然后对模块进行聚类分析，将距离较近的模块合并成新的模块，本部分使用“blockwiseModules”函数进行分析，设置mergeCutHeight &#x3D;0.1、deepSplit&#x3D;2、minModuleSize&#x3D;30、pamStage&#x3D;F。</p>
-
-        </div>
-
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-<nav class="article-nav">
-  
-    <a href="/2022/11/19/pick-p/" id="article-nav-newer" class="article-nav-link-wrap">
-      <div class="article-nav-caption">下一篇</div>
-      <div class="article-nav-title">
-        
-          how to pick &#39;p threshold&#39;？
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2022/11/19/cluster-analysis/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-caption">上一篇</div>
-      <div class="article-nav-title">cluster-analysis</div>
-    </a>
-  
-</nav>
-
-
-    <section class="share">
-        <div class="share-title">分享</div>
-        <a class="share-item" target="_blank"
-            href="https://twitter.com/share?text=WGCNA - leilei's blog&url=http%3A%2F%2Fexample.com%2F2022%2F11%2F19%2FWGCNA%2F">
-            <ion-icon name="logo-twitter"></ion-icon>
-        </a>
-        <a class="share-item" target="_blank"
-            href="https://www.facebook.com/sharer.php?title=WGCNA - leilei's blog&u=http%3A%2F%2Fexample.com%2F2022%2F11%2F19%2FWGCNA%2F">
-            <ion-icon name="logo-facebook"></ion-icon>
-        </a>
-        <!-- <a class="share-item" target="_blank"
-            href="https://service.weibo.com/share/share.php?title=WGCNA - leilei's blog&url=http://example.com/2022/11/19/WGCNA/&pic=">
-            <div class="n-icon n-icon-weibo"></div>
-        </a> -->
-    </section>
 
 </article>
 
 
+    </div></section>
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-</div>
                 </section>
             </section>
 
@@ -285,12 +161,6 @@
 <div class="widget" id="widget">
     
       
-  <div class="widget-wrap">
-    <div class="widget-inner">
-      <div class="toc post-toc-html"></div>
-    </div>
-  </div>
-
     
       
   <div class="widget-wrap widget-cate">
