@@ -231,7 +231,7 @@ class="article article-type-post"
 <h2 id="k-means-clustering"><a href="#k-means-clustering" class="headerlink" title="k-means clustering"></a>k-means clustering</h2><p>elbow plot to find ‘K’</p>
 <h2 id="DBSCAN"><a href="#DBSCAN" class="headerlink" title="DBSCAN"></a>DBSCAN</h2><p>radius of circle for a initial cluster<br>core point</p>
 <h2 id="K-nearest-neighbors"><a href="#K-nearest-neighbors" class="headerlink" title="K-nearest neighbors"></a>K-nearest neighbors</h2><h2 id="Naive-Bayes"><a href="#Naive-Bayes" class="headerlink" title="Naive Bayes"></a>Naive Bayes</h2><ul>
-<li>Multinomial Naive Bayes Classifier<br>  probability for discrete called likelihood<br>  set alpha<br>  high bia and low variance in ML</li>
+<li>Multinomial Naive Bayes Classifier<br>  probability for discrete called likelihood<br>  set alpha to avoid 0<br>  high bia and low variance in ML</li>
 <li>Gaussian Naive Bayes Classification<br>  use log() to avoid ‘uderflow’</li>
 </ul>
 <h2 id="Decision-and-Classification-tree"><a href="#Decision-and-Classification-tree" class="headerlink" title="Decision and Classification tree"></a>Decision and Classification tree</h2><p>test leaves impure: gini impurity, entropy and information gain.<br>how to calculate gini impurity:<br><img src="/2023/08/31/ml/impurity1.jpg"><br><img src="/2023/08/31/ml/impurity2.jpg"><br>to calculate for numeric data, using average age for all adjacent people.<br>put lowest impurity leaves as node.<br>overfit if sample too small -&gt; pruning<br>                           or -&gt; put limits on how trees grow(i.e. require x samples per leaf, x is determined by cross varidation)<br>feature selection: cut off the feature not reduce the impurity to avoid overfit.</p>
@@ -275,6 +275,13 @@ class="article article-type-post"
 </ol>
 <ul>
 <li>e ^ (-gamma(a-b)^2)<br>gamma determined by cross validation.<br><strong>Taylor Series Expansion</strong><br><img src="/2023/08/31/ml/taylor.jpg"><br><img src="/2023/08/31/ml/radialkernel.jpg"><br><strong>Dot product</strong><br>when we plug numbers into radial kernel, the value we get is the relationship between the 2 points in infinite-dimensions.</li>
+</ul>
+<h2 id="Neural-Networks"><a href="#Neural-Networks" class="headerlink" title="Neural Networks"></a>Neural Networks</h2><p>Backpropagation<br>Hidden Layers<br>Activation Function:</p>
+<ul>
+<li>sigmoid  e^x&#x2F;(e^x + 1)</li>
+<li>ReLU (Rectified Linear Unit) max(0,x)</li>
+<li>softplus log(1 + e^x)<br>initialize <strong>weights</strong> using a standard normal distribution.(one of many ways)<br>initialize <strong>bias</strong>  to 0<br>multi-output: <strong>ArgMax</strong>(0or1) can not be used for backpropagation.<br>or SortMax(e^x&#x2F;e^x+e^y) used for gradient descent because of the derivative not being 0.</li>
+<li>calculate deviation of sortmax -&gt; Quotient Rule<br><img src="/sortmax.jpg"><br><strong>cross Entropy</strong></li>
 </ul>
 
         
