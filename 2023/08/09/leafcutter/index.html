@@ -8,7 +8,7 @@
     
     <title>leafcutter 使用说明 | leilei&#39;s blog</title>
 
-    <meta name="description" content="leilei&#39;s blog">
+    <meta name="description" content="&lt;p&gt;比对、junc文件的获得参考&lt;a href=&#34;http://davidaknowles.github.io/leafcutter/&#34;&gt;http://davidaknowles.github.io/leafcutter/&lt;/a&gt;&lt;br&gt;（note1：issue里说python已更新到3.8）&lt;br&gt;（note2：确认junc文件的染色体名为1，2，3或chr1，chr2: 因为玉米v3基因组不是这种命名方法，故使用python fixjun.py更改）&lt;/p&gt;">
     <meta name="keywords" content="">
 
     
@@ -16,17 +16,17 @@
     <meta property="og:locale" content="cn" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content= "leafcutter 使用说明 | leilei&#39;s blog"  />
-    <meta property="og:description" content= "leilei&#39;s blog" />
+    <meta property="og:description" content= "&lt;p&gt;比对、junc文件的获得参考&lt;a href=&#34;http://davidaknowles.github.io/leafcutter/&#34;&gt;http://davidaknowles.github.io/leafcutter/&lt;/a&gt;&lt;br&gt;（note1：issue里说python已更新到3.8）&lt;br&gt;（note2：确认junc文件的染色体名为1，2，3或chr1，chr2: 因为玉米v3基因组不是这种命名方法，故使用python fixjun.py更改）&lt;/p&gt;" />
     <meta property="og:url" content="http://example.com/2023/08/09/leafcutter/index.html" />
     <meta property="og:site_name" content="" />
     <meta property="article:author" content="leilei" />
     <meta property="article:publisher" content="" />
-    <meta property="og:description" content="leilei&#39;s blog" />
+    <meta property="og:description" content="&lt;p&gt;比对、junc文件的获得参考&lt;a href=&#34;http://davidaknowles.github.io/leafcutter/&#34;&gt;http://davidaknowles.github.io/leafcutter/&lt;/a&gt;&lt;br&gt;（note1：issue里说python已更新到3.8）&lt;br&gt;（note2：确认junc文件的染色体名为1，2，3或chr1，chr2: 因为玉米v3基因组不是这种命名方法，故使用python fixjun.py更改）&lt;/p&gt;" />
     <meta name="twitter:title" content="leafcutter 使用说明 | leilei&#39;s blog"/>
-    <meta name="twitter:description" content="leilei&#39;s blog"/>
+    <meta name="twitter:description" content="&lt;p&gt;比对、junc文件的获得参考&lt;a href=&#34;http://davidaknowles.github.io/leafcutter/&#34;&gt;http://davidaknowles.github.io/leafcutter/&lt;/a&gt;&lt;br&gt;（note1：issue里说python已更新到3.8）&lt;br&gt;（note2：确认junc文件的染色体名为1，2，3或chr1，chr2: 因为玉米v3基因组不是这种命名方法，故使用python fixjun.py更改）&lt;/p&gt;"/>
     <script type="application/ld+json">
         {
-            "description": "leilei&#39;s blog",
+            "description": "&lt;p&gt;比对、junc文件的获得参考&lt;a href=&#34;http://davidaknowles.github.io/leafcutter/&#34;&gt;http://davidaknowles.github.io/leafcutter/&lt;/a&gt;&lt;br&gt;（note1：issue里说python已更新到3.8）&lt;br&gt;（note2：确认junc文件的染色体名为1，2，3或chr1，chr2: 因为玉米v3基因组不是这种命名方法，故使用python fixjun.py更改）&lt;/p&gt;",
             "author": { "@type": "Person", "name": "leilei" },
             "@type": "BlogPosting",
             "url": "http://example.com/2023/08/09/leafcutter/index.html",
@@ -39,7 +39,7 @@
             "name": "leilei"
             },
             "headline": "leafcutter 使用说明 | leilei&#39;s blog",
-            "datePublished": "2023-08-09T02:35:42.000Z",
+            "datePublished": "2023-08-09T08:35:42.000Z",
             "mainEntityOfPage": {
                 "@type": "WebPage",
                 "@id": "http://example.com/2023/08/09/leafcutter/index.html"
@@ -184,7 +184,7 @@
         <div class="article-more-info article-more-info-post hairline">
 
             <div class="article-date">
-  <time datetime="2023-08-09T02:35:42.000Z" itemprop="datePublished">2023-08-09</time>
+  <time datetime="2023-08-09T08:35:42.000Z" itemprop="datePublished">2023-08-09</time>
 </div>
 
             
@@ -197,6 +197,7 @@
 
         <div class="article-entry post-inner-html hairline" itemprop="articleBody">
             <p>比对、junc文件的获得参考<a target="_blank" rel="noopener" href="http://davidaknowles.github.io/leafcutter/">http://davidaknowles.github.io/leafcutter/</a><br>（note1：issue里说python已更新到3.8）<br>（note2：确认junc文件的染色体名为1，2，3或chr1，chr2: 因为玉米v3基因组不是这种命名方法，故使用python fixjun.py更改）</p>
+<span id="more"></span>
 <h2 id="Intron-clustering"><a href="#Intron-clustering" class="headerlink" title="Intron clustering"></a>Intron clustering</h2><p><code>python ./leafcutter/clustering/leafcutter_cluster_regtools.py -j junction1.txt -m 30 -o all3 -l 500000 -p 0.001 -k True</code><br>参数-k True表示进行染色体名称确认；-p表示minimum fraction of reads in a cluster that support a junction<br>（note：此前直接使用染色体名称不正确的junc文件进行聚类不会报错，会输出错误结果，所以需要注意junc文件染色体名称问题）</p>
 <p>此时会得到两个文件_perind.counts.gz和_perind_numers.counts.gz，前者为各剪切体的数目，可以通过igv查看bam文件确认是否正确对应；后者为x&#x2F;y格式文件，分子x指该剪切体的数目，分母为该剪切体所在cluster的总数目，cluster的计算参考leafcutter的ng文章。</p>
 <p>因为我的目的是在多组织中定位sQTL，为了方便后续组织间比较，所以聚类时使用所有组织的所有样本。<br>为了方便在单个组织定位，需要把属于同一组织的样本提取出来，并使用自交系名称替换sra号。<br><code>python grepcol3.py</code></p>

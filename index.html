@@ -253,13 +253,6 @@ class="article article-type-post"
     <div class="article-entry post-inner-html">
         
         <p>比对、junc文件的获得参考<a target="_blank" rel="noopener" href="http://davidaknowles.github.io/leafcutter/">http://davidaknowles.github.io/leafcutter/</a><br>（note1：issue里说python已更新到3.8）<br>（note2：确认junc文件的染色体名为1，2，3或chr1，chr2: 因为玉米v3基因组不是这种命名方法，故使用python fixjun.py更改）</p>
-<h2 id="Intron-clustering"><a href="#Intron-clustering" class="headerlink" title="Intron clustering"></a>Intron clustering</h2><p><code>python ./leafcutter/clustering/leafcutter_cluster_regtools.py -j junction1.txt -m 30 -o all3 -l 500000 -p 0.001 -k True</code><br>参数-k True表示进行染色体名称确认；-p表示minimum fraction of reads in a cluster that support a junction<br>（note：此前直接使用染色体名称不正确的junc文件进行聚类不会报错，会输出错误结果，所以需要注意junc文件染色体名称问题）</p>
-<p>此时会得到两个文件_perind.counts.gz和_perind_numers.counts.gz，前者为各剪切体的数目，可以通过igv查看bam文件确认是否正确对应；后者为x&#x2F;y格式文件，分子x指该剪切体的数目，分母为该剪切体所在cluster的总数目，cluster的计算参考leafcutter的ng文章。</p>
-<p>因为我的目的是在多组织中定位sQTL，为了方便后续组织间比较，所以聚类时使用所有组织的所有样本。<br>为了方便在单个组织定位，需要把属于同一组织的样本提取出来，并使用自交系名称替换sra号。<br><code>python grepcol3.py</code></p>
-<h2 id="准备表型文件"><a href="#准备表型文件" class="headerlink" title="准备表型文件"></a>准备表型文件</h2><p><code>python prepare_phenotype_table.py /public/home/leimengyu/bam/SRR_perind.counts.gz -p 10</code><br>（note：输入为上步得到的_perind.counts.gz文件）<br>此时会得到两类文件 _phen文件和qqnorm文件；<br>phen文件的操作为：默认为filter out introns used in less than 40% of individuals or with almost no variation，并将 x&#x2F;y 进行x+0.5&#x2F;y+0.5 计算，得到的数值写入phen文件。<br>qqnorm文件的操作为：将_perind.counts.gz中的矩阵中的x先按行进行scale标准化，再按列进行qqnorm正态化。（进行该操作的原因待探索）<br>如果后续使用推荐FastQTL进行sQTL定位，直接操作sh xx_prepare.sh（该文件内容是tabix and bgzip qqnorm文件）。</p>
-<h2 id="sQTL定位"><a href="#sQTL定位" class="headerlink" title="sQTL定位"></a>sQTL定位</h2><p>为了通过曼哈顿图等确认定位结果的可靠性，我们使用genable进行定位。<br>但定位结果曼哈顿图有散点并且trans-sQTL过多，难以用生物学知识解释。<br>查看表型分布图，分布偏，在预期之内，因为splice 逼近一个分类性状，有的个体splice I型，有的 II型，不会很多，但是这种分布拖尾严重。<br>查看trans-QTL的boxplot图发现，两allele的数目不均，存在其中一个的样本数过少，并且四分位图过宽，表示定位结果不可靠，大概率是拖尾的个体，带的低频snp的原因。<br>同时发现boxplot图中会出现杂合子，因为我用的都是自交系，自交系都是纯系，不应有这种情况，可能是因为测序深度不够导致snp-calling时出现问题。<br>查看使用的rna-seq测序文件，文件过小，500mb左右，该数据为2017年测序，现（2023年）大多数测序深度变深，一个文件大概有6gb大小，最终确定原因，放弃该部分探索。</p>
-<p>文章所提到的python代码可在<a target="_blank" rel="noopener" href="https://github.com/leilei37/scripts/tree/main">https://github.com/leilei37/scripts/tree/main</a> 中找到。</p>
-
         
     </div>
     </div>
@@ -274,7 +267,7 @@ class="article article-type-post"
 <footer class="article-footer">
     <div class="article-more-info">
     <div class="article-date">
-  <time datetime="2023-08-09T02:35:42.000Z" itemprop="datePublished">2023-08-09</time>
+  <time datetime="2023-08-09T08:35:42.000Z" itemprop="datePublished">2023-08-09</time>
 </div>
     
     
