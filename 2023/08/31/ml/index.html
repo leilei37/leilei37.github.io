@@ -270,7 +270,11 @@
 <li>softplus log(1 + e^x)<br>initialize <strong>weights</strong> using a standard normal distribution.(one of many ways)<br>initialize <strong>bias</strong>  to 0<br>multi-input<br>? when input constant output descerete, how to encode output, using one encode?<br><img src="/2023/08/31/ml/io.jpg"><br>multi-output: <strong>ArgMax</strong>(0or1) can not be used for backpropagation.<br>or SortMax(e^x&#x2F;e^x+e^y) used for gradient descent because of the derivative not being 0.</li>
 <li>calculate deviation of sortmax -&gt; Quotient Rule<br><img src="/2023/08/31/ml/quotient-rule-formula.png"><br><img src="/2023/08/31/ml/softmax.jpg"></li>
 </ul>
-<p><strong>Cross Entropy</strong></p>
+<p><strong>Cross Entropy</strong><br>each cross entropy- sum (observed * log (predicted)) </p>
+<ul>
+<li>predicted softmax output</li>
+<li>observed 0&#x2F;1<br>Total Cross Entropy, as total error.<br>why ce not residual: for step size &#x3D; slope(derivative) * learning rate. used to backpropagation.<br><img src="/2023/08/31/ml/ce.jpg"></li>
+</ul>
 
         </div>
 
