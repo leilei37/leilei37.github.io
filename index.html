@@ -281,7 +281,7 @@ class="article article-type-post"
 <li>sigmoid  e^x&#x2F;(e^x + 1)</li>
 <li>ReLU (Rectified Linear Unit) max(0,x)</li>
 <li>softplus log(1 + e^x)<br>initialize <strong>weights</strong> using a standard normal distribution.(one of many ways)<br>initialize <strong>bias</strong>  to 0<br>multi-output: <strong>ArgMax</strong>(0or1) can not be used for backpropagation.<br>or SortMax(e^x&#x2F;e^x+e^y) used for gradient descent because of the derivative not being 0.</li>
-<li>calculate deviation of sortmax -&gt; Quotient Rule<br><img src="/sortmax.jpg"><br><strong>cross Entropy</strong></li>
+<li>calculate deviation of sortmax -&gt; Quotient Rule<br><img src="/2023/08/31/ml/softmax.jpg"><br><strong>cross Entropy</strong></li>
 </ul>
 
         
