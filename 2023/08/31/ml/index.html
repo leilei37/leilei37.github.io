@@ -281,7 +281,8 @@
 <li>observed &#x3D; 0&#x2F;1<br>Total Cross Entropy, as total error.<br>why ce not residual: for step size &#x3D; slope(derivative) * learning rate. used to backpropagation.<br><img src="/2023/08/31/ml/ce.jpg"><br><img src="/2023/08/31/ml/ce2.jpg"><br>note: when finding minimum total error, even the signal of “p” is the same, we need to use each sample to calculate each ‘p’.</li>
 </ul>
 <h3 id="Convolutional-Neural-Networks-CNNs"><a href="#Convolutional-Neural-Networks-CNNs" class="headerlink" title="Convolutional Neural Networks(CNNs)"></a>Convolutional Neural Networks(CNNs)</h3><p>*filter(convolution)&#x3D;feature map -&gt; ReLu activation function -&gt; max pooling (or average&#x2F;mean pooling) -&gt; as input node<br>(?how to determin filter?)</p>
-<h3 id="Recurrent-Neural-Networks-RNNs"><a href="#Recurrent-Neural-Networks-RNNs" class="headerlink" title="Recurrent Neural Networks(RNNs)"></a>Recurrent Neural Networks(RNNs)</h3><p>feedback loops</p>
+<h3 id="Recurrent-Neural-Networks-RNNs"><a href="#Recurrent-Neural-Networks-RNNs" class="headerlink" title="Recurrent Neural Networks(RNNs)"></a>Recurrent Neural Networks(RNNs)</h3><p>feedback loops<br>w2&gt;1 -&gt;the exploding gradient problem<br>w2&lt;1 -&gt; the vanishing problem<br>so</p>
+<h3 id="Long-Short-Term-Memory-LSTM"><a href="#Long-Short-Term-Memory-LSTM" class="headerlink" title="Long Short-Term Memory(LSTM)"></a>Long Short-Term Memory(LSTM)</h3><p>sigmoid activation function (0,1)<br>tanh activation function (-1,1) e^x - e^-x &#x2F; e^x + e^-x<br>forget gate<br>input gate<br>output gate<br><img src="/2023/08/31/ml/lstm.jpg"></p>
 
         </div>
 
