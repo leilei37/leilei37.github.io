@@ -283,6 +283,21 @@
 <h3 id="Convolutional-Neural-Networks-CNNs"><a href="#Convolutional-Neural-Networks-CNNs" class="headerlink" title="Convolutional Neural Networks(CNNs)"></a>Convolutional Neural Networks(CNNs)</h3><p>*filter(convolution)&#x3D;feature map -&gt; ReLu activation function -&gt; max pooling (or average&#x2F;mean pooling) -&gt; as input node<br>(?how to determin filter?)</p>
 <h3 id="Recurrent-Neural-Networks-RNNs"><a href="#Recurrent-Neural-Networks-RNNs" class="headerlink" title="Recurrent Neural Networks(RNNs)"></a>Recurrent Neural Networks(RNNs)</h3><p>feedback loops<br>w2&gt;1 -&gt;the exploding gradient problem<br>w2&lt;1 -&gt; the vanishing problem<br>so</p>
 <h3 id="Long-Short-Term-Memory-LSTM"><a href="#Long-Short-Term-Memory-LSTM" class="headerlink" title="Long Short-Term Memory(LSTM)"></a>Long Short-Term Memory(LSTM)</h3><p>sigmoid activation function (0,1)<br>tanh activation function (-1,1) e^x - e^-x &#x2F; e^x + e^-x<br>forget gate<br>input gate<br>output gate<br><img src="/2023/08/31/ml/lstm.jpg"></p>
+<h3 id="Sequence-to-Sequence-seq2seq-Encoder-Decoder"><a href="#Sequence-to-Sequence-seq2seq-Encoder-Decoder" class="headerlink" title="Sequence-to-Sequence(seq2seq) Encoder-Decoder"></a>Sequence-to-Sequence(seq2seq) Encoder-Decoder</h3><p>Tokens<br>embedding values<br>cell, layer<br>context vector</p>
+<ul>
+<li>word embedding(turn word to number)</li>
+</ul>
+<h3 id="transformer"><a href="#transformer" class="headerlink" title="transformer"></a>transformer</h3><ul>
+<li>position encoding(encode positions of the words)<br>? position encoding 1st 2nd x轴位置怎么确定的？<br>query, key and value<br>(dot product simularity between query and key)</li>
+<li>self-attention(encode the relationship among the words)<br>8 self-attention cells aka multi-head attention</li>
+<li>residual connection(relatively easily and quickly train inparallel)</li>
+<li>encoder-decoder attention(encoder and decoder similarity to determine which word to be translate first)<br><img src="/2023/08/31/ml/transformer.jpg"><br>(encoder)</li>
+</ul>
+<h3 id="decoder-only-transformers"><a href="#decoder-only-transformers" class="headerlink" title="decoder-only transformers"></a>decoder-only transformers</h3><p>using <strong>mask self-attention</strong> （gpt 12 self-attention cells） not self-attention<br>diffenrence：</p>
+<ul>
+<li>only include the ones that came before to determine how each words are related each other.</li>
+<li>in trandition transformer, using self-attention and encoder-decoder-attention (in decoder. During training, this is kindly like mask self-attention and also called it)<br>n-dimensional <strong>Tensor</strong><br><strong>automatic differentiation</strong></li>
+</ul>
 
         </div>
 
